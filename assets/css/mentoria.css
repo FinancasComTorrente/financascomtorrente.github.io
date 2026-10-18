@@ -1,0 +1,699 @@
+/* ================================================================
+   assets/css/mentoria.css — High-Conversion Mentoria Landing Pages
+   Shared across /mentoria/dividas/, /mentoria/investir/, /mentoria/patrimonio/
+   ================================================================ */
+
+.lp-topbar {
+    background: linear-gradient(90deg, rgba(208, 167, 71, 0.15), rgba(208, 167, 71, 0.28), rgba(208, 167, 71, 0.15));
+    border-bottom: 1px solid rgba(208, 167, 71, 0.3);
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent-light);
+    letter-spacing: 0.3px;
+}
+
+.lp-topbar strong {
+    color: #fff;
+}
+
+.lp-header {
+    padding: 1.1rem 0;
+    background: rgba(5, 14, 26, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.lp-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lp-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.lp-logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+
+/* ── HERO LP ── */
+.lp-hero {
+    position: relative;
+    padding: 5rem 0 5.5rem;
+    overflow: hidden;
+}
+
+.lp-hero-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.95fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.lp-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    background: rgba(208, 167, 71, 0.12);
+    border: 1px solid rgba(208, 167, 71, 0.35);
+    border-radius: 999px;
+    color: var(--color-accent-light);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+}
+
+.lp-hero h1 {
+    font-size: 3rem;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.lp-hero-sub {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+}
+
+.lp-hero-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 2.2rem;
+}
+
+.lp-hero-bullets li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.98rem;
+    color: #e2e8f0;
+}
+
+.lp-hero-bullets li i {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.btn-wa-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-wa-cta:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+}
+
+.btn-gold-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.1rem 2.2rem;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    color: var(--color-primary-dark);
+    box-shadow: 0 10px 30px rgba(208, 167, 71, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-gold-cta:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 40px rgba(208, 167, 71, 0.5);
+}
+
+.lp-cta-micro {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 0.9rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+}
+
+.lp-cta-micro span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.lp-cta-micro i {
+    color: var(--color-accent);
+}
+
+.lp-hero-card {
+    background: linear-gradient(145deg, rgba(21, 44, 82, 0.65), rgba(7, 17, 32, 0.9));
+    border: 1px solid rgba(208, 167, 71, 0.3);
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.lp-hero-card img {
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(208, 167, 71, 0.2);
+}
+
+.lp-hero-card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.lp-hero-card-stats div {
+    background: rgba(5, 14, 26, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 0.75rem 0.5rem;
+}
+
+.lp-hero-card-stats strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-accent);
+}
+
+.lp-hero-card-stats small {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+/* ── PAIN POINTS / IDENTIFICATION ── */
+.lp-pains-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.lp-pain-card {
+    background: rgba(21, 44, 82, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-left: 4px solid #ef4444;
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    transition: var(--transition);
+}
+
+.lp-pain-card.positive-border {
+    border-left-color: var(--color-accent);
+}
+
+.lp-pain-card:hover {
+    transform: translateY(-4px);
+    background: rgba(21, 44, 82, 0.55);
+}
+
+.lp-pain-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.lp-pain-card.positive-border .lp-pain-icon {
+    background: rgba(208, 167, 71, 0.15);
+    color: var(--color-accent);
+}
+
+.lp-pain-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+
+.lp-pain-card p {
+    color: var(--color-text-muted);
+    font-size: 0.94rem;
+}
+
+/* ── 4-MONTH ROADMAP ── */
+.lp-roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.lp-step-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(208, 167, 71, 0.18);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.lp-step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.lp-step-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary-dark);
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.lp-step-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.7rem;
+}
+
+.lp-step-card p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+}
+
+/* ── PRICE ANCHORING & DAILY/WEEKLY/MONTHLY COMPARISON ── */
+.lp-pricing-section {
+    background: linear-gradient(180deg, var(--color-primary-dark) 0%, #071529 50%, var(--color-bg) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.lp-price-breakdown {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.lp-price-tier {
+    background: rgba(21, 44, 82, 0.45);
+    border: 1px solid rgba(208, 167, 71, 0.25);
+    border-radius: 20px;
+    padding: 2.2rem 1.75rem;
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.lp-price-tier.featured {
+    background: linear-gradient(145deg, rgba(208, 167, 71, 0.18), rgba(21, 44, 82, 0.75));
+    border: 2px solid var(--color-accent);
+    transform: scale(1.03);
+    box-shadow: 0 20px 50px rgba(208, 167, 71, 0.18);
+}
+
+.lp-tier-badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(208, 167, 71, 0.15);
+    color: var(--color-accent-light);
+    margin-bottom: 0.9rem;
+}
+
+.lp-price-tier.featured .lp-tier-badge {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+}
+
+.lp-tier-amount {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+}
+
+.lp-tier-amount small {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-accent-light);
+}
+
+.lp-tier-sub {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.lp-trivial-compare {
+    background: rgba(5, 14, 26, 0.65);
+    border: 1px dashed rgba(208, 167, 71, 0.35);
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 0.92rem;
+    color: #e2e8f0;
+}
+
+.lp-trivial-compare strong {
+    color: var(--color-accent-light);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.98rem;
+}
+
+/* Comparison Box: Everyday Trivial Expenses vs Mentoria */
+.lp-comparison-box {
+    background: rgba(12, 28, 52, 0.75);
+    border: 1px solid rgba(208, 167, 71, 0.35);
+    border-radius: 24px;
+    padding: 2.75rem;
+    max-width: 980px;
+    margin: 0 auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.lp-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.25rem;
+}
+
+.lp-comp-col {
+    background: rgba(5, 14, 26, 0.6);
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lp-comp-col.bad {
+    border-top: 3px solid #ef4444;
+}
+
+.lp-comp-col.good {
+    border-top: 3px solid #25D366;
+    background: rgba(208, 167, 71, 0.06);
+}
+
+.lp-comp-col h4 {
+    font-size: 1.15rem;
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lp-comp-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lp-comp-col li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.93rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--color-text-muted);
+}
+
+.lp-comp-col li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.lp-comp-col.bad li strong {
+    color: #f87171;
+    white-space: nowrap;
+}
+
+.lp-comp-col.good li strong {
+    color: #4ade80;
+    white-space: nowrap;
+}
+
+.lp-total-summary {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(208, 167, 71, 0.2);
+}
+
+.lp-total-summary .total-tag {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.lp-total-summary .total-tag strong {
+    color: #fff;
+    font-size: 1.45rem;
+}
+
+/* ── TESTIMONIALS ── */
+.lp-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.lp-testi-card {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lp-stars {
+    color: #fbbf24;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.lp-testi-text {
+    font-style: italic;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.lp-testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.lp-testi-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-accent);
+}
+
+.lp-testi-author strong {
+    display: block;
+    font-size: 0.98rem;
+}
+
+.lp-testi-author small {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+}
+
+/* ── GUARANTEE & FAQ ── */
+.lp-guarantee-box {
+    max-width: 820px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(208, 167, 71, 0.12), rgba(21, 44, 82, 0.5));
+    border: 1px solid rgba(208, 167, 71, 0.35);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.lp-guarantee-badge {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(208, 167, 71, 0.2);
+    border: 2px solid var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.lp-faq-list {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lp-faq-list details {
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    transition: var(--transition);
+}
+
+.lp-faq-list details[open] {
+    border-color: rgba(208, 167, 71, 0.4);
+    background: rgba(21, 44, 82, 0.6);
+}
+
+.lp-faq-list summary {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lp-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.lp-faq-list summary::after {
+    content: '+';
+    color: var(--color-accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.lp-faq-list details[open] summary::after {
+    content: '−';
+}
+
+.lp-faq-list details p {
+    margin-top: 0.9rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 992px) {
+    .lp-hero-grid,
+    .lp-pains-grid,
+    .lp-comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lp-price-breakdown,
+    .lp-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-price-tier.featured {
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .lp-hero {
+        padding: 3rem 0 4rem;
+    }
+
+    .lp-hero h1 {
+        font-size: 2.15rem;
+    }
+
+    .lp-roadmap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-guarantee-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.75rem;
+    }
+
+    .lp-comparison-box {
+        padding: 1.5rem;
+    }
+
+    .btn-wa-cta,
+    .btn-gold-cta {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+}
