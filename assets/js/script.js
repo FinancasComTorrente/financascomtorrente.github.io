@@ -58,19 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
             touchMultiplier: 2,
         });
 
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-        
-        // Connect GSAP ScrollTrigger to Lenis
+        // Connect GSAP ScrollTrigger to Lenis (single RAF loop)
         if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
             lenis.on('scroll', ScrollTrigger.update);
             gsap.ticker.add((time) => {
                 lenis.raf(time * 1000);
             });
             gsap.ticker.lagSmoothing(0);
+        } else {
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
         }
     }
 
@@ -137,6 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Floating Orbs (subtle glowing blobs in sections)
     // ─────────────────────────────────────────
     function addOrbs(section) {
+        const wrap = document.createElement('div');
+        wrap.className = 'orbs-wrap';
+        section.style.position = 'relative';
+        section.appendChild(wrap);
+
         const positions = [
             { cls: 'orb-gold', size: 300, top: '-10%', left: '-5%' },
             { cls: 'orb-blue', size: 400, top: '50%', right: '-10%' },
@@ -145,8 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const orb = document.createElement('div');
             orb.className = `orb ${cls}`;
             orb.style.cssText = `width:${size}px; height:${size}px; top:${top}; ${left ? 'left:' + left : 'right:' + right};`;
-            section.style.position = 'relative';
-            section.appendChild(orb);
+            wrap.appendChild(orb);
         });
     }
 
@@ -207,16 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
             typingTarget.textContent = texts[0];
         } else {
             let tIndex = 0, cIndex = 0, deleting = false;
+            const textSpan = document.createElement('span');
             const cursor = document.createElement('span');
             cursor.className = 'typed-cursor';
-            typingTarget.after(cursor);
-
             typingTarget.textContent = '';
+            typingTarget.appendChild(textSpan);
+            typingTarget.appendChild(cursor);
 
             function type() {
                 const current = texts[tIndex];
                 if (!deleting) {
-                    typingTarget.textContent = current.slice(0, cIndex + 1);
+                    textSpan.textContent = current.slice(0, cIndex + 1);
                     cIndex++;
                     if (cIndex === current.length) {
                         deleting = true;
@@ -224,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         return;
                     }
                 } else {
-                    typingTarget.textContent = current.slice(0, cIndex - 1);
+                    textSpan.textContent = current.slice(0, cIndex - 1);
                     cIndex--;
                     if (cIndex === 0) {
                         deleting = false;

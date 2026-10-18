@@ -1720,12 +1720,13 @@ body {
 
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: none;
     }
 }
 
-/* ── 2. Floating Particles (canvas-free) ── */
-.particles-wrap {
+/* ── 2. Floating Particles & Orbs Wrappers (canvas-free) ── */
+.particles-wrap,
+.orbs-wrap {
     position: absolute;
     inset: 0;
     overflow: hidden;
