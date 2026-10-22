@@ -294,6 +294,40 @@
                 <div class="section-header text-center">
                     <span class="lp-pill">Impacto Real</span>
                     <h2 class="section-title">O que dizem empresários e gestores que <span class="text-gradient">aplicaram a mentoria</span></h2>
+                    <p class="section-desc">Assista aos depoimentos em vídeo ou leia abaixo o relato real de quem já passou pelo acompanhamento:</p>
+                </div>
+
+                <!-- Depoimentos em Vídeo (YouTube Shorts) -->
+                <div class="lp-video-grid">
+                    <div class="lp-video-card">
+                        <div class="lp-video-frame js-yt-short" data-video-id="jhUDYaij6kU">
+                            <img src="https://i.ytimg.com/vi/jhUDYaij6kU/oar2.jpg"
+                                onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/jhUDYaij6kU/hqdefault.jpg';"
+                                alt="Depoimento em Vídeo 1 - Mentoria Finanças com Torrente" loading="lazy">
+                            <div class="lp-video-play"><i class="ph-fill ph-play"></i></div>
+                            <span class="lp-video-badge"><i class="ph-fill ph-play-circle"></i> Assistir Depoimento</span>
+                        </div>
+                    </div>
+
+                    <div class="lp-video-card">
+                        <div class="lp-video-frame js-yt-short" data-video-id="z1JrL27tcO4">
+                            <img src="https://i.ytimg.com/vi/z1JrL27tcO4/oar2.jpg"
+                                onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/z1JrL27tcO4/hqdefault.jpg';"
+                                alt="Depoimento em Vídeo 2 - Mentoria Finanças com Torrente" loading="lazy">
+                            <div class="lp-video-play"><i class="ph-fill ph-play"></i></div>
+                            <span class="lp-video-badge"><i class="ph-fill ph-play-circle"></i> Assistir Depoimento</span>
+                        </div>
+                    </div>
+
+                    <div class="lp-video-card">
+                        <div class="lp-video-frame js-yt-short" data-video-id="0v0Un1Ztxwc">
+                            <img src="https://i.ytimg.com/vi/0v0Un1Ztxwc/oar2.jpg"
+                                onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/0v0Un1Ztxwc/hqdefault.jpg';"
+                                alt="Depoimento em Vídeo 3 - Mentoria Finanças com Torrente" loading="lazy">
+                            <div class="lp-video-play"><i class="ph-fill ph-play"></i></div>
+                            <span class="lp-video-badge"><i class="ph-fill ph-play-circle"></i> Assistir Depoimento</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="lp-testimonials-grid">
@@ -457,6 +491,13 @@
                         currency: 'BRL'
                     });
                 }
+            });
+        });
+        document.querySelectorAll('.js-yt-short').forEach(function (frame) {
+            frame.addEventListener('click', function () {
+                var id = frame.getAttribute('data-video-id');
+                if (!id) return;
+                frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="Depoimento Mentoria Finanças com Torrente" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
             });
         });
     </script>
