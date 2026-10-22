@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script>
+        // Sincroniza tema: padrão é CLARO. Escuro só se o usuário escolheu explicitamente.
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '958464843717048');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=958464843717048&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="google-site-verification" content="KsaNVmgeOXfPHn9jOokWKWTofjjKbCIPqaacTbJNOqU" />
+    <title>Sem Medo de Investir - O Guia Definitivo</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/logo-quadrada.png" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Premium Animations -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <style>
+        :root {
+            /* Light Mode Palette (Premium Ivory/Gold) */
+            --color-background: #FDFBF7;
+            --color-on-background: #252422;
+            --color-surface: #FCFAFA;
+            --color-surface-container: #F0EBE1;
+            --color-surface-container-high: #EAE3D5;
+            --color-surface-container-highest: #E0D6C8;
+            --color-on-surface: #2C2A28;
+            --color-on-surface-variant: #5E5B58;
+            --color-primary: #A2701D;
+            --color-on-primary: #FFFFFF;
+            --color-primary-container: #FBEBD0;
+            --color-secondary: #2B456E;
+            --color-tertiary: #9B7826;
+            --color-outline: #C1B7AD;
+            --color-outline-variant: #D9D2CB;
+            --color-error: #BA1A1A;
+        }
+
+        :root.dark {
+            /* Dark Mode Palette (Original Sovereign Curator) */
+            --color-background: #03132b;
+            --color-on-background: #d6e3ff;
+            --color-surface: #03132b;
+            --color-surface-container: #112037;
+            --color-surface-container-high: #1b2a43;
+            --color-surface-container-highest: #26354e;
+            --color-on-surface: #d6e3ff;
+            --color-on-surface-variant: #d4c4b2;
+            --color-primary: #f9bb65;
+            --color-on-primary: #452b00;
+            --color-primary-container: #bd8635;
+            --color-secondary: #b0c6ff;
+            --color-tertiary: #ecc15e;
+            --color-outline: #9c8f80;
+            --color-outline-variant: #504537;
+            --color-error: #ffb4ab;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "var(--color-background)",
+                        "on-background": "var(--color-on-background)",
+                        "surface": "var(--color-surface)",
+                        "surface-container": "var(--color-surface-container)",
+                        "surface-container-high": "var(--color-surface-container-high)",
+                        "surface-container-highest": "var(--color-surface-container-highest)",
+                        "on-surface": "var(--color-on-surface)",
+                        "on-surface-variant": "var(--color-on-surface-variant)",
+                        "primary": "var(--color-primary)",
+                        "on-primary": "var(--color-on-primary)",
+                        "primary-container": "var(--color-primary-container)",
+                        "secondary": "var(--color-secondary)",
+                        "tertiary": "var(--color-tertiary)",
+                        "outline": "var(--color-outline)",
+                        "outline-variant": "var(--color-outline-variant)",
+                        "error": "var(--color-error)"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .glass-panel,
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        html.dark .glass-panel,
+        html.dark .glass-card {
+            background: rgba(11, 28, 52, 0.6);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-container) 100%);
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(180, 122, 39, 0.1) 0%, rgba(248, 250, 252, 0) 70%);
+        }
+
+        html.dark .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(249, 187, 101, 0.1) 0%, rgba(3, 19, 43, 0) 70%);
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 30px rgba(180, 122, 39, 0.15);
+        }
+
+        html.dark .gold-glow:hover {
+            box-shadow: 0 0 30px rgba(249, 187, 101, 0.15);
+        }
+
+        .portrait-gradient {
+            mask-image: linear-gradient(to right, black 70%, transparent 100%);
+        }
+
+        .glow-line {
+            background: linear-gradient(180deg, rgba(249, 187, 101, 0) 0%, #f9bb65 20%, #bd8635 80%, rgba(189, 134, 53, 0) 100%);
+        }
+
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 4s ease-in-out infinite;
+        }
+
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.05s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.15s;
+        }
+
+        /* Offer Selection Styles */
+        input.offer-card-radio:checked+label .radio-circle {
+            border-color: #f9bb65;
+        }
+
+        input.offer-card-radio:checked+label .inner-dot {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-primary">
+
+    <!-- Mobile Theme Toggle -->
+    <button id="mobile-theme-toggle"
+        class="fixed top-6 right-6 z-[60] w-12 h-12 rounded-full flex items-center justify-center bg-surface border border-outline/30 text-on-surface shadow-xl md:hidden transition-all active:scale-95">
+        <span class="material-symbols-outlined text-[24px] dark:hidden">light_mode</span>
+        <span class="material-symbols-outlined text-[24px] hidden dark:block">dark_mode</span>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-2xl border border-white/10 bg-slate-950/70 backdrop-blur-xl z-50 hidden md:flex justify-between items-center px-8 py-3 shadow-[0_20px_40px_rgba(3,19,43,0.4)] transition-all duration-300"
+        id="navbar">
+        <div class="hidden md:flex items-center">
+            <img src="assets/img/logo-horizontal.png" alt="Sem Medo de Investir" class="h-7 md:h-9 w-auto pt-3 pb-1" />
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="font-label text-slate-300 hover:text-amber-200 transition-colors uppercase tracking-widest text-sm"
+                href="#hero">O Livro</a>
+            <a class="font-label text-slate-300 hover:text-amber-200 transition-colors uppercase tracking-widest text-sm"
+                href="#audience">Público</a>
+            <a class="font-label text-slate-300 hover:text-amber-200 transition-colors uppercase tracking-widest text-sm"
+                href="#journey">Jornada</a>
+            <a class="font-label text-slate-300 hover:text-amber-200 transition-colors uppercase tracking-widest text-sm"
+                href="#author">Autor</a>
+            <a class="font-label text-slate-300 hover:text-amber-200 transition-colors uppercase tracking-widest text-sm"
+                href="#faq">Dúvidas</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <!-- Botão de Theme Toggle -->
+            <button id="theme-toggle"
+                class="w-10 h-10 rounded-full flex items-center justify-center bg-surface border border-outline/30 text-on-surface hover:bg-surface-container-high transition-colors">
+                <span class="material-symbols-outlined text-[20px] dark:hidden">dark_mode</span>
+                <span class="material-symbols-outlined text-[20px] hidden dark:block">light_mode</span>
+            </button>
+
+            <a href="#checkout"
+                class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2 rounded-xl scale-95 active:scale-90 transition-transform hover:shadow-[0_0_20px_rgba(249,187,101,0.3)]">
+                Comprar Agora
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content Sections -->
+    <div class="relative min-h-screen overflow-hidden">
+
+        <!-- Hero Section -->
+        <main id="hero" class="relative pt-32 pb-20">
+            <div class="absolute top-0 left-1/4 w-[500px] h-[500px] hero-glow pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-0 w-[600px] h-[600px] hero-glow opacity-50 pointer-events-none"></div>
+
+            <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 z-10 reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-white/5 mb-8">
+                        <span class="material-symbols-outlined text-primary text-sm"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="text-xs font-label uppercase tracking-[0.1em] text-secondary">Lançamento Exclusivo
+                            2026</span>
+                    </div>
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-headline font-bold tracking-tighter leading-[0.9] text-on-surface mb-6">
+                        Sem medo de <span class="text-primary italic">Investir</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                        Um guia para construir patrimônio em qualquer fase da vida. Transforme sua relação com o
+                        dinheiro através de uma metodologia sólida e comprovada.
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+                            <a href="#checkout"
+                                class="gold-gradient text-on-primary font-bold text-lg px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_15px_30px_rgba(249,187,101,0.3)] flex items-center gap-3">
+                                Garantir Meu Livro
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </a>
+                            <div class="flex flex-col">
+                                <div class="flex -space-x-3 mb-2">
+                                    <div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container">
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high">
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full border-2 border-surface bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary">
+                                        +1k</div>
+                                </div>
+                                <span class="text-sm text-on-surface-variant font-medium">mais de mil leitores
+                                    satisfeitos</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 opacity-70 ml-2">
+                            <span class="material-symbols-outlined text-[14px]">lock</span>
+                            <span class="text-[10px] font-label uppercase tracking-widest font-bold">Compra 100% segura
+                                • Frete rastreado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Mockup -->
+                <div class="lg:col-span-5 relative z-10 flex flex-col items-center reveal reveal-delay-2">
+                    <div class="relative w-full aspect-[4/5] max-w-md perspective-1000">
+                        <div
+                            class="w-full h-full rounded-2xl shadow-[0_50px_100px_rgba(0,0,0,0.6)] overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-700">
+                            <img alt="Sem Medo de Investir Capa do Livro" class="w-full h-full object-cover"
+                                src="assets/img/capa-livro.png" />
+                        </div>
+                        <!-- Social Proof 1 -->
+                        <div
+                            class="absolute -top-10 -left-10 glass-panel p-4 rounded-2xl border border-white/10 shadow-2xl max-w-[200px] animate-bounce-slow hidden sm:block">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[12px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                                </div>
+                                <div class="flex">
+                                    <span class="material-symbols-outlined text-[10px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span><span
+                                        class="material-symbols-outlined text-[10px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span><span
+                                        class="material-symbols-outlined text-[10px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span><span
+                                        class="material-symbols-outlined text-[10px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span><span
+                                        class="material-symbols-outlined text-[10px] text-primary"
+                                        style="font-variation-settings: 'FILL' 1;">star</span>
+                                </div>
+                            </div>
+                            <p class="text-[10px] leading-tight text-on-surface italic">"O divisor de águas que eu
+                                precisava para começar com segurança."</p>
+                        </div>
+                        <!-- Social Proof 2 -->
+                        <div
+                            class="absolute -bottom-6 -right-10 glass-panel p-4 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-4 hidden sm:flex">
+                            <div
+                                class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center shadow-lg">
+                                <span class="material-symbols-outlined text-on-primary">auto_graph</span>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-secondary uppercase tracking-widest font-bold">Resultados</p>
+                                <p class="text-sm font-bold text-on-surface">+ Rentabilidade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Divider / Trust Badges -->
+        <section class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5 opacity-40 grayscale reveal">
+            <p class="text-center text-xs font-label uppercase tracking-[0.3em] text-outline mb-12">Mencionado nas
+                principais mídias</p>
+            <div class="w-full relative overflow-hidden flex hover:grayscale-0 transition-all">
+                <div class="marquee-track flex whitespace-nowrap gap-24 items-center pl-24">
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        EXAME</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        InfoMoney</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        Valor</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        O Globo</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        Forbes</div>
+
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        EXAME</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        InfoMoney</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        Valor</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        O Globo</div>
+                    <div
+                        class="font-headline font-bold text-3xl tracking-tighter text-on-surface/50 hover:text-on-surface/80 transition-colors uppercase">
+                        Forbes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Section -->
+        <section id="audience" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+            <div class="mb-20 text-center md:text-left max-w-3xl reveal">
+                <span class="font-label text-primary tracking-[0.2em] uppercase text-xs mb-4 block">O Caminho da
+                    Riqueza</span>
+                <h2
+                    class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-background mb-6 leading-tight">
+                    Para Quem É <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Este
+                        Livro</span>
+                </h2>
+                <div class="space-y-4 text-lg font-body leading-relaxed max-w-2xl">
+                    <p class="text-on-surface-variant">
+                        <strong class="text-on-surface">Você já sentiu que o dinheiro nunca sobra</strong> — mesmo trabalhando muito, no fim do mês a conta não fecha como deveria? Ou pior: você guarda, mas o medo de errar paralisa qualquer decisão de investir?
+                    </p>
+                    <p class="text-on-surface-variant">
+                        Esse bloqueio tem nome: é a falta de um método claro. Sem uma estratégia, qualquer notícia vira motivo de pânico e qualquer "oportunidade" vira uma armadilha.
+                    </p>
+                    <p class="text-on-surface-variant">
+                        <strong class="text-on-surface">Sem Medo de Investir</strong> foi criado exatamente para isso: entregar um caminho direto, sem jargões, do primeiro real investido até a construção de um patrimônio que trabalha por você — não importa o quanto você já sabe ou quanto você tem hoje.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
+                <!-- Beginner -->
+                <div
+                    class="glass-card group border border-outline-variant/20 rounded-3xl p-8 gold-glow transition-all duration-500 hover:border-primary/40 relative overflow-hidden reveal">
+                    <div
+                        class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                    <div class="mb-8 flex items-center justify-between">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">school</span>
+                        </div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Fase:
+                            Início</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-background mb-4">Iniciantes Absolutos</h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                        Aprenda do zero como abrir sua conta e fazer o primeiro aporte com total segurança e clareza.
+                    </p>
+                </div>
+                <!-- Intermediate -->
+                <div
+                    class="glass-card group border border-outline-variant/20 rounded-3xl p-8 gold-glow transition-all duration-500 hover:border-primary/40 relative overflow-hidden reveal reveal-delay-1">
+                    <div
+                        class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                    <div class="mb-8 flex items-center justify-between">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Fase:
+                            Otimização</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-background mb-4">Investidores Intermediários
+                    </h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                        Refine sua estratégia e entenda como equilibrar risco e retorno de forma profissional.
+                    </p>
+                </div>
+                <!-- Asset Seekers -->
+                <div
+                    class="glass-card group border border-outline-variant/20 rounded-3xl p-8 gold-glow transition-all duration-500 hover:border-primary/40 relative overflow-hidden reveal reveal-delay-2">
+                    <div
+                        class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                    <div class="mb-8 flex items-center justify-between">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">account_balance</span>
+                        </div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Fase:
+                            Proteção</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-background mb-4">Buscadores de Ativos Reais</h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                        Aprenda a identificar ativos tangíveis e moedas fortes que blindam seu patrimônio a longo prazo.
+                    </p>
+                </div>
+                <!-- Million Builders -->
+                <div
+                    class="glass-card group border border-outline-variant/20 rounded-3xl p-8 gold-glow transition-all duration-500 hover:border-primary/40 relative overflow-hidden reveal reveal-delay-3">
+                    <div
+                        class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                    <div class="mb-8 flex items-center justify-between">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 text-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-500">
+                            <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                        </div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant/60">Fase:
+                            Legado</span>
+                    </div>
+                    <h3 class="font-headline text-2xl font-bold text-on-background mb-4">Jornada Milionária</h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6 font-body">
+                        Transforme renda em riqueza geracional com juros compostos garantindo seu futuro.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-20 reveal">
+                <div
+                    class="flex flex-col md:flex-row items-center gap-12 glass-card rounded-[2.5rem] p-4 md:p-10 border border-outline-variant/10 overflow-hidden group shadow-2xl">
+                    <!-- Image Box -->
+                    <div class="w-full md:w-1/2 h-[450px] md:h-[650px] rounded-[2rem] overflow-hidden relative shadow-xl">
+                        <img alt="Matheus Torrente - Autoridade em Investimentos"
+                            class="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
+                            src="assets/img/autor-premium.jpg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface/30 to-transparent"></div>
+                    </div>
+                    <!-- Text Content -->
+                    <div class="w-full md:w-1/2 space-y-10 p-4 md:p-6">
+                        <div class="space-y-6">
+                            <h2
+                                class="font-headline text-4xl md:text-6xl font-bold text-on-background leading-tight tracking-tighter">
+                                A autoridade que o seu <br /> dinheiro <span class="text-primary italic">merece.</span>
+                            </h2>
+                            <div class="w-24 h-1.5 bg-primary rounded-full"></div>
+                        </div>
+                        <div class="space-y-8">
+                            <p
+                                class="text-xl md:text-2xl text-on-surface-variant italic font-body leading-relaxed border-l-4 border-primary/20 pl-8 py-2">
+                                "Investir não é sobre adivinhar o futuro, é sobre estar preparado para qualquer
+                                cenário."
+                            </p>
+                            <div class="flex items-center gap-6 pt-6 translate-y-4 opacity-80">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                                    <span class="material-symbols-outlined text-3xl">verified</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-label uppercase tracking-[0.2em] text-primary font-bold mb-1">
+                                        Economista 782</p>
+                                    <p class="text-sm text-on-surface-variant font-medium">Método Torrente de Gestão
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="max-w-7xl mx-auto px-8 relative py-20 reveal">
+            <div class="mb-20 text-center">
+                <span class="text-secondary font-label text-xs uppercase tracking-[0.3em] block mb-4">A Evolução
+                    Patrimonial</span>
+                <h2
+                    class="text-5xl md:text-7xl font-headline font-bold text-on-background tracking-tight leading-none mb-6">
+                    A Jornada de <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Construção</span>
+                </h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+                    Sair da inércia e atingir a liberdade financeira não é sorte, é método. Siga os marcos.
+                </p>
+            </div>
+
+            <div class="relative py-20">
+                <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 glow-line opacity-30 hidden md:block">
+                </div>
+
+                <!-- Stage 1 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 group reveal">
+                    <div class="md:text-right flex flex-col md:items-end justify-center">
+                        <span class="text-primary font-headline text-3xl font-bold mb-2">R$ 1</span>
+                        <h3 class="text-2xl font-headline font-bold text-on-background mb-4">A Quebra da Inércia</h3>
+                        <p class="text-on-surface-variant max-w-md md:ml-auto">
+                            O passo mais difícil é o primeiro. Superar o medo do desconhecido e abrir sua primeira conta
+                            em corretora. Aqui, o foco é educação e hábito.
+                        </p>
+                    </div>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 hidden md:flex w-12 h-12 rounded-full bg-surface border-4 border-primary shadow-[0_0_20px_rgba(249,187,101,0.4)] items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-xl">rocket_launch</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div
+                            class="glass-panel p-8 rounded-2xl border border-white/5 w-full hover:bg-surface-container-high transition-colors group-hover:-translate-y-2 duration-500">
+                            <img alt="O Início — o primeiro passo nos investimentos"
+                                class="w-full h-48 object-cover rounded-xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity"
+                                src="assets/img/primeiro-passo.png" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 mb-32 group reveal">
+                    <div class="md:order-2 flex flex-col items-start justify-center">
+                        <span class="text-primary font-headline text-3xl font-bold mb-2">R$ 10.000</span>
+                        <h3 class="text-2xl font-headline font-bold text-on-background mb-4">Reserva de Emergência</h3>
+                        <p class="text-on-surface-variant max-w-md">
+                            A tranquilidade para dormir à noite. A construção do colchão de liquidez que protege seus
+                            sonhos de imprevistos do dia a dia.
+                        </p>
+                    </div>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 hidden md:flex w-12 h-12 rounded-full bg-surface border-4 border-primary shadow-[0_0_20px_rgba(249,187,101,0.4)] items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-xl">shield</span>
+                    </div>
+                    <div class="md:order-1 flex items-center">
+                        <div
+                            class="glass-panel p-8 rounded-2xl border border-white/5 w-full hover:bg-surface-container-high transition-colors group-hover:-translate-y-2 duration-500">
+                            <img alt="Segurança"
+                                class="w-full h-48 object-cover rounded-xl mb-6 opacity-80 group-hover:opacity-100 transition-opacity"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMY_ZHHDQ3qTc-omsAKr70T0_mwC0XozXEo9JPKsWLa_W9lspZhCE29aq-tTzTCQ_guNr-bObw7wYRwfEifQNgTD08JWmLUq_QnXykhQUaWiB-9Y72xtjLxYuwBJ8nqScJwbujeURX978SEaAodJdqSpEtC6rC5Vi-FITCgNLjAaPdFb35zSlO0JSBs_uJLQRUmuJH1qzc0vbBIWRN4MHxOgBnZip4_HNVXr8T2rFSG-61Z05R7jvNfHStuVJ0Pq4QeMtwb0B62xM" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Stage (Soberania) -->
+                <div class="relative grid grid-cols-1 md:grid-cols-2 gap-12 group reveal">
+                    <div class="md:text-right flex flex-col md:items-end justify-center">
+                        <span class="text-primary font-headline text-3xl font-bold mb-2">R$ 2.000.000+</span>
+                        <h3 class="text-2xl font-headline font-bold text-on-background mb-4">Soberania Financeira</h3>
+                        <p class="text-on-surface-variant max-w-md md:ml-auto">
+                            A liberdade total. O trabalho se torna opcional e o patrimônio se tornou um motor perpétuo
+                            de geração de valor para as próximas gerações.
+                        </p>
+                    </div>
+                    <div
+                        class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 hidden md:flex w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-container border-4 border-surface shadow-[0_0_30px_rgba(249,187,101,0.6)] items-center justify-center">
+                        <span class="material-symbols-outlined text-on-primary text-xl"
+                            style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div
+                            class="glass-panel p-8 rounded-2xl border-2 border-primary/20 bg-primary/5 w-full hover:bg-primary/10 transition-all group-hover:-translate-y-2 duration-500 shadow-[0_20px_40px_rgba(249,187,101,0.1)]">
+                            <img alt="Soberania Financeira - Paz de Espírito"
+                                class="w-full h-48 object-cover rounded-xl mb-6 grayscale hover:grayscale-0 transition-all duration-700"
+                                src="assets/img/autor-paz.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn Section -->
+        <section class="max-w-7xl mx-auto px-8 relative py-20 reveal">
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none">
+            </div>
+            <div class="mb-20 space-y-4">
+                <span class="text-primary font-label text-xs uppercase tracking-[0.2em]">O Conhecimento é
+                    Liberdade</span>
+                <h2
+                    class="text-5xl md:text-7xl font-headline font-bold tracking-tight text-on-surface max-w-3xl leading-[1.1]">
+                    O que você vai aprender
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="md:col-span-8 group relative glass-card p-10 rounded-3xl border border-white/5 overflow-hidden transition-all duration-500 hover:bg-surface-container-high hover:-translate-y-1 reveal">
+                    <div class="relative z-10 flex flex-col h-full justify-between gap-12">
+                        <div>
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
+                                <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+                            </div>
+                            <h3 class="text-3xl font-headline font-bold text-on-surface mb-4">Arquitetura de Portfólio
+                            </h3>
+                            <p class="text-on-surface-variant text-lg max-w-lg leading-relaxed">
+                                Aprenda a construir uma carteira resiliente que resiste a crises globais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="md:col-span-4 glass-card p-8 rounded-3xl border border-white/5 transition-all duration-500 hover:bg-surface-container-high hover:-translate-y-1 reveal reveal-delay-1">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+                        <span class="material-symbols-outlined text-primary text-2xl">psychology</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Mindset Inabalável</h3>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Controle os vieses cognitivos que destroem o lucro. Disciplina emocional como vantagem
+                        competitiva.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="md:col-span-12 glass-card p-10 rounded-3xl border border-white/5 flex flex-col md:flex-row items-center gap-8 transition-all duration-500 hover:bg-surface-container-high hover:-translate-y-1 reveal reveal-delay-2">
+                    <div class="flex-1">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+                            <span class="material-symbols-outlined text-primary text-2xl">security</span>
+                        </div>
+                        <h3 class="text-2xl font-headline font-bold text-on-surface mb-4">Blindagem Patrimonial</h3>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Estratégias legais para proteger seu patrimônio contra inflação e instabilidades políticas.
+                            O guia definitivo para a sucessão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Author Section -->
+        <section id="author" class="max-w-7xl mx-auto px-8 py-20 reveal">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Content -->
+                <div class="lg:col-span-7 z-10 space-y-12">
+                    <div class="space-y-4">
+                        <span
+                            class="inline-block px-4 py-1 rounded-full border border-primary/30 text-primary font-label text-xs uppercase tracking-[0.2em] bg-primary/5">
+                            O Arquiteto da Estratégia
+                        </span>
+                        <h2
+                            class="text-6xl md:text-8xl font-headline font-bold tracking-tighter leading-none text-on-background">
+                            Matheus <br />
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-tertiary">Torrente</span>
+                        </h2>
+                    </div>
+                    <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl font-light">
+                        Economista e educador financeiro apaixonado por simplificar os investimentos. Matheus dedica sua carreira a democratizar o conhecimento sobre construção de patrimônio, ajudando milhares de pessoas a investirem com segurança e estratégia desde os primeiros passos.
+                    </p>
+                    <!-- Experience grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div
+                            class="glass-card border border-outline-variant/20 p-6 md:p-8 rounded-xl gold-glow flex items-center gap-4 md:gap-6">
+                            <div
+                                class="w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl md:text-4xl">workspace_premium</span>
+                            </div>
+                            <div>
+                                <div class="text-2xl md:text-3xl font-headline font-bold text-on-background">YouTube
+                                </div>
+                                <div
+                                    class="text-[10px] md:text-xs font-label uppercase tracking-widest text-primary/70">
+                                    Educação Financeira</div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="glass-card border border-outline-variant/20 p-6 md:p-8 rounded-xl gold-glow flex items-center gap-4 md:gap-6">
+                            <div
+                                class="w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl md:text-4xl">account_balance</span>
+                            </div>
+                            <div>
+                                <div class="text-2xl md:text-3xl font-headline font-bold text-on-background">Simplificado
+                                </div>
+                                <div
+                                    class="text-[10px] md:text-xs font-label uppercase tracking-widest text-primary/70">
+                                    Método de Investimento</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portrait -->
+                <div class="lg:col-span-5 relative order-first lg:order-last">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                        <div class="absolute inset-0 bg-surface">
+                            <img alt="Matheus Torrente"
+                                class="w-full h-full object-cover grayscale contrast-125 portrait-gradient"
+                                src="assets/img/foto-autor.jpg" />
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60">
+                        </div>
+                        <div
+                            class="absolute bottom-8 left-8 right-8 glass-card border border-white/10 p-6 rounded-xl backdrop-blur-2xl hidden md:block">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">verified</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-label uppercase tracking-widest text-primary mb-1">
+                                        Verificação de Elite</p>
+                                    <p class="text-sm text-on-surface leading-tight font-medium italic">"A liberdade
+                                        financeira é a arquitetura das suas decisões."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Background Shapes -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="max-w-4xl mx-auto px-8 space-y-20 py-20 reveal">
+            <div class="text-center space-y-4">
+                <h2 class="text-4xl font-headline font-bold text-on-background">Perguntas Frequentes</h2>
+                <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer" open>
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                Preciso de muito dinheiro para começar?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            Absolutamente não. A metodologia "Sem Medo de Investir" foca na construção de patrimônio
+                            através da consistência, não apenas de grandes aportes iniciais. O livro ensina como
+                            otimizar seus recursos atuais.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                O conteúdo é indicado para iniciantes?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            Sim, o material foi estruturado para levar o leitor do zero absoluto à autonomia financeira
+                            usando uma linguagem clara, livre de "economês".
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                Qual o formato do produto?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            Temos as opções do Livro Físico enviado na sua casa, além do acesso a todas as planilhas e
+                            e-books através do acesso premium na mesma hora da compra.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                Quanto tempo levo para ler o livro e aplicar?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            O livro foi desenhado para ser prático e de fácil absorção. Geralmente nossos leitores
+                            concluem a leitura inicial em poucos dias, mas ele serve como um manual de consulta
+                            vitalícia para suas próximas decisões financeiras.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                E se eu não gostar? Tem garantia?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            Com certeza. Você tem 7 dias de garantia incondicional. Se você achar que a metodologia não
+                            é para você, devolvemos 100% do seu investimento de forma simples e rápida, sem burocracia.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                O pagamento no site é seguro?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            Sim, utilizamos infraestrutura de ponta e processamos pagamentos com os mais rígidos
+                            protocolos de segurança e criptografia, garantindo proteção total aos seus dados.
+                        </div>
+                    </details>
+                </div>
+                <!-- FAQ Item 7 -->
+                <div
+                    class="group surface-container rounded-2xl overflow-hidden transition-all duration-300 hover:surface-container-high border border-white/5" onclick="this.querySelector('details').open = !this.querySelector('details').open">
+                    <details class="p-6 cursor-pointer">
+                        <summary class="flex items-center justify-between list-none">
+                            <h3
+                                class="text-xl font-headline font-semibold text-on-surface group-hover:text-primary transition-colors">
+                                Comprei na pré-venda, como recebo o livro físico?</h3>
+                            <span
+                                class="material-symbols-outlined text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div
+                            class="mt-6 pt-6 border-t border-outline-variant/20 text-on-surface-variant leading-relaxed">
+                            O livro físico será entregue oficialmente no dia do evento de lançamento. Caso você não possa comparecer, não se preocupe: o Matheus garantirá a entrega para você, seja via correios ou pessoalmente, para que você receba seu exemplar com segurança.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee Section & Checkout -->
+        <section id="checkout" class="max-w-6xl mx-auto px-4 py-20 reveal">
+
+            <!-- Guarantee Badge -->
+            <div class="flex justify-center mb-16">
+                <div
+                    class="glass-card flex flex-col md:flex-row items-center gap-8 p-8 md:p-10 rounded-3xl border border-primary/30 max-w-3xl gold-glow relative overflow-hidden">
+                    <div
+                        class="absolute -right-16 -top-16 w-48 h-48 bg-primary/10 blur-[60px] rounded-full pointer-events-none">
+                    </div>
+                    <div
+                        class="w-20 h-20 shrink-0 rounded-full bg-surface-container-highest flex items-center justify-center border border-outline-variant/30 text-primary">
+                        <span class="material-symbols-outlined text-4xl"
+                            style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-headline font-bold text-on-surface mb-2">Risco Absoluto Zero</h4>
+                        <p class="text-on-surface-variant leading-relaxed">Se você testar a nossa metodologia e não
+                            conseguir aplicar com clareza nos primeiros 7 dias, nós devolveremos 100% do seu
+                            investimento de imediato. Sem letrinhas miúdas.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="text-center mb-12">
+                <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-4">Garanta o Seu Exemplar</h2>
+                <p class="text-secondary max-w-xl mx-auto opacity-80">Escolha a oferta ideal e seja direcionado para o pagamento seguro.</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto flex flex-col gap-8">
+                <div class="flex flex-col gap-6">
+                    <h3 class="font-headline text-xl font-bold text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">shopping_cart</span> Selecione sua oferta
+                    </h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        <!-- Offer 1 -->
+                        <div class="relative group">
+                            <input class="hidden offer-card-radio peer" id="offer1" name="offer" type="radio" />
+                            <label
+                                class="block p-6 rounded-xl glass-panel border border-outline-variant/20 cursor-pointer transition-all hover:border-primary/50 peer-checked:border-primary peer-checked:bg-primary/10"
+                                for="offer1">
+                                <div class="flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="radio-circle w-5 h-5 rounded-full border-2 border-outline-variant/50 flex items-center justify-center transition-colors duration-300">
+                                            <div
+                                                class="inner-dot w-2 h-2 rounded-full bg-primary scale-0 transition-transform duration-300">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline font-bold text-lg text-on-surface">Sem Medo de
+                                                Investir</h4>
+                                            <p class="text-sm text-on-surface-variant">Livro Físico - O Guia Definitivo
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-2xl font-bold text-primary font-headline">R$ 49,90</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Offer 2 -->
+                        <div class="relative group">
+                            <div
+                                class="absolute -top-3 left-6 z-10 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">
+                                Mais Vendido </div>
+                            <input checked="" class="hidden offer-card-radio peer" id="offer2" name="offer"
+                                type="radio" />
+                            <label
+                                class="block p-6 rounded-xl glass-panel border border-primary/40 cursor-pointer transition-all hover:border-primary peer-checked:border-primary peer-checked:bg-primary/10 shadow-[0_0_30px_rgba(178,125,45,0.1)]"
+                                for="offer2">
+                                <div class="flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="radio-circle w-5 h-5 rounded-full border-2 border-outline-variant/50 flex items-center justify-center transition-colors duration-300">
+                                            <div
+                                                class="inner-dot w-2 h-2 rounded-full bg-primary scale-0 transition-transform duration-300">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-headline font-bold text-lg text-on-surface">Combo Master
+                                            </h4>
+                                            <div class="text-sm text-on-surface-variant space-y-1 mt-2">
+                                                <p>✓ 2 Livros Físicos (De <span class="line-through">R$ 135</span> por
+                                                    R$ 89,90)</p>
+                                                <p>✓ [Bônus] E-book: Como Investir em Ações Passo a Passo (De <span
+                                                        class="line-through opacity-70">R$ 47</span> por <span
+                                                        class="text-primary font-bold">R$ 0</span>)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-xs text-on-surface-variant line-through opacity-50">R$ 197,90</p>
+                                        <p class="text-3xl font-bold text-primary font-headline">R$ 89,90</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment CTA -->
+                <div class="flex flex-col items-center gap-4">
+                    <button id="checkout-btn"
+                        class="w-full gold-gradient text-on-primary font-headline font-bold text-xl py-5 rounded-2xl shadow-[0_15px_40px_rgba(249,187,101,0.35)] hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-3">
+                        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">lock</span>
+                        <span id="checkout-btn-label">COMPRAR AGORA &mdash; R$ 89,90</span>
+                    </button>
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="material-symbols-outlined text-[16px]">verified_user</span>
+                        <span class="text-[11px] font-label uppercase tracking-widest">Pagamento 100% Seguro &bull; Gateway Ton</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-16 px-8 border-t border-outline-variant/30 bg-surface-container transition-colors duration-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-lg font-bold text-primary font-headline text-center md:text-left">Sem Medo de Investir
+            </div>
+            <div class="font-['Inter'] text-sm text-on-surface-variant text-center md:text-right">
+                <p>© 2026 Sem Medo de Investir. Todos os direitos reservados.</p>
+                <p class="mt-2 text-xs opacity-70">Site desenvolvido por Matheus Torrente - CPF 005.865.492-50</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animations & Logic Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar Scroll Effect
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('bg-slate-950/90', 'border-white/20');
+                    nav.classList.remove('bg-slate-950/70', 'border-white/10');
+                } else {
+                    nav.classList.add('bg-slate-950/70', 'border-white/10');
+                    nav.classList.remove('bg-slate-950/90', 'border-white/20');
+                }
+            });
+
+            // Inicializar Lenis Smooth Scroll
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                smoothTouch: false,
+                touchMultiplier: 2,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Integração Lenis + Âncoras
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    lenis.scrollTo(this.getAttribute('href'));
+                });
+            });
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            // GSAP Reveal Animations (Substitui Observer CSS)
+            gsap.utils.toArray('.reveal').forEach(elem => {
+                const delay = elem.classList.contains('reveal-delay-1') ? 0.05 :
+                    elem.classList.contains('reveal-delay-2') ? 0.1 :
+                        elem.classList.contains('reveal-delay-3') ? 0.15 : 0;
+
+                gsap.fromTo(elem,
+                    { y: 25, opacity: 0, scale: 0.99 },
+                    {
+                        y: 0, opacity: 1, scale: 1, duration: 0.55, delay: delay, ease: "power2.out", scrollTrigger: {
+                            trigger: elem,
+                            start: "top 90%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // Parallax do Livro no Hero Section
+            gsap.to('.perspective-1000', {
+                y: -50,
+                rotationY: -10,
+                rotationX: 5,
+                scrollTrigger: {
+                    trigger: '#hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1
+                }
+            });
+
+            // Marquee Infinito (Marcas da Mídia)
+            gsap.to('.marquee-track', {
+                xPercent: -50,
+                ease: "none",
+                duration: 25,
+                repeat: -1
+            });
+
+            // Hover Magnético 3D nos Glass Cards
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    gsap.to(card, {
+                        rotationX: ((y - centerY) / centerY) * -10,
+                        rotationY: ((x - centerX) / centerX) * 10,
+                        transformPerspective: 1000,
+                        ease: "power2.out",
+                        duration: 0.5
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        rotationX: 0,
+                        rotationY: 0,
+                        ease: "power2.out",
+                        duration: 0.5
+                    });
+                });
+            });
+
+            // Theme Toggle Logic
+            const themeToggles = ['theme-toggle', 'mobile-theme-toggle'];
+            themeToggles.forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        const html = document.documentElement;
+                        if (html.classList.contains('dark')) {
+                            html.classList.remove('dark');
+                            localStorage.setItem('theme', 'light');
+                        } else {
+                            html.classList.add('dark');
+                            localStorage.setItem('theme', 'dark');
+                        }
+                    });
+                }
+            });
+
+            // Payment Links
+            const paymentLinks = {
+                'offer1': 'https://payment-link-v3.ton.com.br/pl_gBqRp15ODjVyZA7I9NfkMZ4AkvNzo7ml',
+                'offer2': 'https://payment-link-v3.ton.com.br/pl_R45DO0evqAlZwX2s2hezgWxrXL29BQaj'
+            };
+
+            const paymentLabels = {
+                'offer1': 'COMPRAR AGORA — R$ 49,90',
+                'offer2': 'COMPRAR AGORA — R$ 89,90'
+            };
+
+            const offerRadios = document.querySelectorAll('.offer-card-radio');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const checkoutBtnLabel = document.getElementById('checkout-btn-label');
+
+            // Update label when offer changes
+            offerRadios.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    checkoutBtnLabel.textContent = paymentLabels[e.target.id];
+                    checkoutBtn.classList.add('scale-105');
+                    setTimeout(() => checkoutBtn.classList.remove('scale-105'), 200);
+                });
+            });
+
+            // On button click, redirect to payment gateway
+            checkoutBtn.addEventListener('click', () => {
+                const selected = document.querySelector('.offer-card-radio:checked');
+                const offerId = selected ? selected.id : 'offer2';
+                window.open(paymentLinks[offerId], '_blank');
+            });
+            // Animated Browser Tab Title
+            const titleMessages = [
+                'Sem Medo de Investir - O Guia Definitivo',
+                '📈 Construa Patrimônio com Método',
+                '💰 Do Zero à Soberania Financeira',
+                '🔒 Compra 100% Segura - Garanta o Seu',
+                '⭐ +1.000 Leitores Satisfeitos',
+            ];
+            let titleIndex = 0;
+            setInterval(() => {
+                titleIndex = (titleIndex + 1) % titleMessages.length;
+                document.title = titleMessages[titleIndex];
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>
