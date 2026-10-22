@@ -116,6 +116,17 @@
     flex-shrink: 0;
 }
 
+.lp-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.lp-cta-group.justify-center {
+    justify-content: center;
+}
+
 .btn-wa-cta {
     display: inline-flex;
     align-items: center;
