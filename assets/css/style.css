@@ -2097,3 +2097,272 @@ body {
     border-left-color: var(--color-accent);
     transform: translateX(6px);
 }
+
+/* =========================================
+   Na Mídia Page (midia.html)
+========================================= */
+.media-highlights-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.media-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--color-surface);
+    border: 1px solid rgba(208, 167, 71, 0.22);
+    backdrop-filter: blur(12px);
+}
+
+.media-highlight-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(208, 167, 71, 0.14);
+    border: 1px solid rgba(208, 167, 71, 0.35);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    flex-shrink: 0;
+}
+
+.media-highlight-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-text);
+}
+
+.media-highlight-item p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+.media-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.media-filter-btn {
+    padding: 0.65rem 1.35rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(21, 44, 82, 0.35);
+    color: var(--color-text-muted);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.media-filter-btn i {
+    font-size: 1.1rem;
+    color: var(--color-accent);
+}
+
+.media-filter-btn:hover,
+.media-filter-btn.active {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary-dark);
+    border-color: transparent;
+    box-shadow: 0 6px 20px rgba(208, 167, 71, 0.3);
+}
+
+.media-filter-btn:hover i,
+.media-filter-btn.active i {
+    color: var(--color-primary-dark);
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.media-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.media-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(208, 167, 71, 0.45);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px rgba(208, 167, 71, 0.12);
+}
+
+.media-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0c1c34, #152c52);
+}
+
+.media-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.media-card:hover .media-thumb img {
+    transform: scale(1.06);
+    filter: brightness(1);
+}
+
+.media-thumb-fallback {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: radial-gradient(circle at 30% 30%, rgba(208, 167, 71, 0.22), rgba(12, 28, 52, 0.95));
+    color: var(--color-accent);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.media-thumb-fallback i {
+    font-size: 3.2rem;
+}
+
+.media-thumb-fallback span {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.media-source-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    background: rgba(5, 14, 26, 0.85);
+    border: 1px solid rgba(208, 167, 71, 0.4);
+    color: var(--color-accent-light);
+    backdrop-filter: blur(8px);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    z-index: 2;
+}
+
+.media-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 14, 26, 0.25);
+    transition: var(--transition);
+}
+
+.media-play-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: var(--color-primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 0 0 8px rgba(208, 167, 71, 0.22), 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.media-card:hover .media-play-circle {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 12px rgba(208, 167, 71, 0.32), 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.media-body {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.media-meta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.media-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+    line-height: 1.35;
+}
+
+.media-desc {
+    font-size: 0.94rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.media-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: auto;
+}
+
+.media-actions .btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.7rem 1rem;
+    font-size: 0.88rem;
+    gap: 0.4rem;
+}
+
+@media (max-width: 992px) {
+    .media-highlights-bar {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+}
