@@ -41,6 +41,8 @@ html {
     /* scroll-behavior: smooth; REMOVIDO PARA EVITAR CONFLITO COM LENIS */
     background-color: var(--color-bg);
     min-height: 100vh;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -49,9 +51,12 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 main {
