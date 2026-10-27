@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecionando | Matheus Torrente</title>
+    <link rel="canonical" href="https://financascomtorrente.com/">
+    <script>
+        (function () {
+            var path = window.location.pathname || "/";
+            var search = window.location.search || "";
+            var hash = window.location.hash || "";
+            if (path.indexOf("/home/") === 0) {
+                var newPath = path.replace(/^\/home\//, "/");
+                window.location.replace("https://financascomtorrente.com" + newPath + search + hash);
+            } else if (path === "/home") {
+                window.location.replace("https://financascomtorrente.com/" + search + hash);
+            } else {
+                window.location.replace("https://financascomtorrente.com/");
+            }
+        })();
+    </script>
+    <meta http-equiv="refresh" content="1; url=https://financascomtorrente.com/">
+</head>
+<body style="background:#050E1A;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;">
+    <p>Redirecionando para <a href="https://financascomtorrente.com/" style="color:#D0A747;">financascomtorrente.com</a>...</p>
+</body>
+</html>

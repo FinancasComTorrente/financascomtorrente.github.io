@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://financascomtorrente.github.io/home/sitemap.xml
+Sitemap: https://financascomtorrente.com/sitemap.xml
