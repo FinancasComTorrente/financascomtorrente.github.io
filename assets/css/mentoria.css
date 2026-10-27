@@ -547,6 +547,114 @@ main,
     font-size: 1.45rem;
 }
 
+/* ── APP TORRENTE & PLATAFORMA POMT SHOWCASE ── */
+.lp-showcase-block {
+    margin-top: 2.75rem;
+    background: rgba(5, 14, 26, 0.55);
+    border: 1px solid rgba(208, 167, 71, 0.25);
+    border-radius: 22px;
+    padding: 2rem;
+}
+
+.lp-showcase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lp-showcase-header h3 {
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+}
+
+.lp-showcase-header h3 i {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+}
+
+.lp-showcase-header span {
+    font-size: 0.85rem;
+    color: var(--color-accent-light);
+    background: rgba(208, 167, 71, 0.12);
+    border: 1px solid rgba(208, 167, 71, 0.3);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.lp-screens-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.lp-screens-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.lp-screen-card {
+    background: rgba(12, 28, 52, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
+    transition: var(--transition);
+}
+
+.lp-screen-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-accent);
+}
+
+.lp-screen-img-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #050E1A;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lp-screen-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.lp-screen-caption {
+    text-align: center;
+    padding: 0.2rem 0.4rem 0.35rem;
+}
+
+.lp-screen-caption strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+}
+
+.lp-screen-caption small {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
 /* ── TESTIMONIALS (VIDEO SHORTS + TEXT CARDS) ── */
 .lp-video-grid {
     display: grid;
@@ -801,8 +909,20 @@ main,
     }
 
     .lp-price-breakdown,
-    .lp-testimonials-grid {
+    .lp-testimonials-grid,
+    .lp-screens-grid-3,
+    .lp-screens-grid-2 {
         grid-template-columns: 1fr;
+    }
+
+    .lp-screens-grid-3,
+    .lp-screens-grid-2 {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .lp-showcase-block {
+        padding: 1.25rem 1rem;
     }
 
     .lp-video-grid {
