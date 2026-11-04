@@ -1,9 +1,10 @@
-// Envio do formulário de qualificação (SDR) por e-mail (via FormSubmit.co)
+// Envio do formulário de qualificação (SDR) via Google Apps Script (Gmail + Google Sheets / 3C)
 document.addEventListener('DOMContentLoaded', function () {
     var forms = document.querySelectorAll('.contato-form');
     if (!forms.length) return;
 
-    var endpoint = 'https://formsubmit.co/ajax/financascomtorrente@gmail.com';
+    // URL do Web App gerado no Google Apps Script
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjzIn8nywdAHIfXcxzHjnO6MS1UgZeOCOT6HtvUnnuF-aOL6zvVhDI0btmfwclGCtO/exec';
 
     // Máscara automática para Telefone / WhatsApp brasileiro: (DD) 9XXXX-XXXX
     function formatPhone(value) {
@@ -42,8 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
+            // Anti-spam honeypot
+            var honey = form.querySelector('input[name="_honey"]');
+            if (honey && honey.value) return;
+
+            var rawDigits = '';
             if (phoneInput) {
-                var rawDigits = phoneInput.value.replace(/\D/g, '');
+                rawDigits = phoneInput.value.replace(/\D/g, '');
                 if (rawDigits.length < 10) {
                     setStatus('Por favor, informe um número de telefone/WhatsApp válido com DDD.', 'error');
                     phoneInput.focus();
@@ -51,9 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            // O FormSubmit bloqueia envios feitos diretamente de arquivo local (file://) por não possuir domínio HTTP/HTTPS
-            if (window.location.protocol === 'file:') {
-                setStatus('Para testar o envio de e-mail, acesse pelo domínio oficial (https://financascomtorrente.com) ou via servidor local (http://localhost). O serviço de e-mail bloqueia arquivos abertos via file://.', 'error');
+            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('https://script.google.com/') !== 0) {
+                setStatus('A URL do Google Apps Script ainda não foi configurada em assets/js/contato-form.js.', 'error');
                 return;
             }
 
@@ -63,48 +68,42 @@ document.addEventListener('DOMContentLoaded', function () {
             setStatus('', '');
 
             var formData = new FormData(form);
-            var payload = {};
-            formData.forEach(function (value, key) {
-                payload[key] = value;
-            });
+            var payload = {
+                data_hora: new Date().toLocaleString('pt-BR'),
+                nome: formData.get('nome') || '',
+                telefone: formData.get('telefone') || '',
+                telefone_3c: rawDigits ? ('55' + rawDigits) : '',
+                email: formData.get('email') || '',
+                momento_financeiro: formData.get('momento_financeiro') || '',
+                principal_desafio: formData.get('principal_desafio') || '',
+                mensagem: formData.get('mensagem') || '',
+                pagina_origem: formData.get('pagina_origem') || (document.title + ' (' + window.location.pathname + ')')
+            };
 
-            // Converte selects para o rótulo legível no e-mail
-            ['momento_financeiro', 'principal_desafio', 'assunto'].forEach(function (fieldName) {
+            // Converte selects para o rótulo legível na planilha e no e-mail
+            ['momento_financeiro', 'principal_desafio'].forEach(function (fieldName) {
                 var selectEl = form.querySelector('[name="' + fieldName + '"]');
                 if (selectEl && selectEl.tagName === 'SELECT' && selectEl.selectedIndex >= 0) {
                     payload[fieldName] = selectEl.options[selectEl.selectedIndex].text;
                 }
             });
 
-            fetch(endpoint, {
+            // text/plain evita bloqueio de preflight CORS no Google Apps Script e funciona inclusive localmente
+            fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'text/plain;charset=utf-8'
                 },
-                referrerPolicy: 'origin-when-cross-origin',
                 body: JSON.stringify(payload)
             })
                 .then(function (res) {
-                    return res.json().then(function (json) {
-                        return { ok: res.ok, status: res.status, body: json };
-                    });
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.json();
                 })
                 .then(function (result) {
-                    var body = result.body || {};
-                    var msg = String(body.message || '');
-
-                    // Caso o FormSubmit peça a ativação inicial do e-mail
-                    if (msg.toLowerCase().indexOf('activat') !== -1) {
-                        form.reset();
-                        setStatus('Enviamos um e-mail de ativação para financascomtorrente@gmail.com! Abra o e-mail e clique em "Activate Form" para liberar o recebimento.', 'success');
-                        return;
+                    if (result && result.result === 'error') {
+                        throw new Error(result.message || 'Erro no script');
                     }
-
-                    if (!result.ok || body.success === 'false' || body.success === false) {
-                        throw new Error(msg || ('HTTP ' + result.status));
-                    }
-
                     form.reset();
                     setStatus('Recebemos seus dados! Nossa equipe entrará em contato em breve.', 'success');
                     if (typeof fbq === 'function') fbq('track', 'Lead');
