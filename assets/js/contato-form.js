@@ -51,31 +51,60 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
+            // O FormSubmit bloqueia envios feitos diretamente de arquivo local (file://) por não possuir domínio HTTP/HTTPS
+            if (window.location.protocol === 'file:') {
+                setStatus('Para testar o envio de e-mail, acesse pelo domínio oficial (https://financascomtorrente.com) ou via servidor local (http://localhost). O serviço de e-mail bloqueia arquivos abertos via file://.', 'error');
+                return;
+            }
+
             var originalHTML = button.innerHTML;
             button.disabled = true;
             button.textContent = 'Enviando...';
             setStatus('', '');
 
-            var data = new FormData(form);
+            var formData = new FormData(form);
+            var payload = {};
+            formData.forEach(function (value, key) {
+                payload[key] = value;
+            });
 
             // Converte selects para o rótulo legível no e-mail
             ['momento_financeiro', 'principal_desafio', 'assunto'].forEach(function (fieldName) {
                 var selectEl = form.querySelector('[name="' + fieldName + '"]');
                 if (selectEl && selectEl.tagName === 'SELECT' && selectEl.selectedIndex >= 0) {
-                    data.set(fieldName, selectEl.options[selectEl.selectedIndex].text);
+                    payload[fieldName] = selectEl.options[selectEl.selectedIndex].text;
                 }
             });
 
             fetch(endpoint, {
                 method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: data
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                referrerPolicy: 'origin-when-cross-origin',
+                body: JSON.stringify(payload)
             })
                 .then(function (res) {
-                    if (!res.ok) throw new Error('HTTP ' + res.status);
-                    return res.json();
+                    return res.json().then(function (json) {
+                        return { ok: res.ok, status: res.status, body: json };
+                    });
                 })
-                .then(function () {
+                .then(function (result) {
+                    var body = result.body || {};
+                    var msg = String(body.message || '');
+
+                    // Caso o FormSubmit peça a ativação inicial do e-mail
+                    if (msg.toLowerCase().indexOf('activat') !== -1) {
+                        form.reset();
+                        setStatus('Enviamos um e-mail de ativação para financascomtorrente@gmail.com! Abra o e-mail e clique em "Activate Form" para liberar o recebimento.', 'success');
+                        return;
+                    }
+
+                    if (!result.ok || body.success === 'false' || body.success === false) {
+                        throw new Error(msg || ('HTTP ' + result.status));
+                    }
+
                     form.reset();
                     setStatus('Recebemos seus dados! Nossa equipe entrará em contato em breve.', 'success');
                     if (typeof fbq === 'function') fbq('track', 'Lead');
