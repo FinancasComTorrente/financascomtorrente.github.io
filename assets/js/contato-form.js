@@ -57,6 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
+            var lgpdInput = form.querySelector('input[name="aceite_lgpd"]');
+            if (lgpdInput && !lgpdInput.checked) {
+                setStatus('Por favor, marque a caixa de concordância com a LGPD para enviar.', 'error');
+                lgpdInput.focus();
+                return;
+            }
+
             var originalHTML = button.innerHTML;
             button.disabled = true;
             button.textContent = 'Enviando...';
@@ -72,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 momento_financeiro: formData.get('momento_financeiro') || '',
                 principal_desafio: formData.get('principal_desafio') || '',
                 mensagem: formData.get('mensagem') || '',
+                aceite_lgpd: 'Sim (Aceito LGPD)',
                 pagina_origem: formData.get('pagina_origem') || (document.title + ' (' + window.location.pathname + ')')
             };
 

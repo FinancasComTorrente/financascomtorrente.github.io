@@ -27,7 +27,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.3">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.4">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
     <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -569,6 +569,12 @@
                             <textarea id="mensagem-midia" name="mensagem" rows="3"
                                 placeholder="Se desejar, conte um pouco mais sobre seu cenário, pauta ou dúvida..."></textarea>
                         </div>
+                        <div class="form-lgpd">
+                            <label class="lgpd-label">
+                                <input type="checkbox" name="aceite_lgpd" value="Sim (Aceito LGPD)" required>
+                                <span>Concordo com o tratamento dos meus dados pessoais para contato comercial via telefone, WhatsApp e e-mail, nos termos da <strong>LGPD (Lei nº 13.709/2018)</strong>. *</span>
+                            </label>
+                        </div>
                         <button type="submit" class="btn btn-primary w-100">Enviar Informações <i class="ph-bold ph-paper-plane-right"></i></button>
                         <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
@@ -625,7 +631,7 @@
     </footer>
 
     <script src="assets/js/script.js?v=2.1"></script>
-    <script src="assets/js/contato-form.js?v=1.4"></script>
+    <script src="assets/js/contato-form.js?v=1.5"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.media-filter-btn');
