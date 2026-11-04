@@ -26,6 +26,46 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        // Sugestões rápidas clicáveis (chips) que preenchem o campo digitável
+        var chips = form.querySelectorAll('.quick-chip');
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                var group = chip.closest('.form-group');
+                if (!group) return;
+                var input = group.querySelector('input[type="text"], textarea');
+                if (!input) return;
+
+                var value = chip.getAttribute('data-value') || chip.textContent.trim();
+                input.value = value;
+
+                group.querySelectorAll('.quick-chip').forEach(function (c) {
+                    c.classList.remove('active');
+                });
+                chip.classList.add('active');
+                input.focus();
+            });
+        });
+
+        // Se o usuário digitar manualmente, sincroniza o destaque das sugestões
+        ['momento_financeiro', 'principal_desafio'].forEach(function (fieldName) {
+            var field = form.querySelector('[name="' + fieldName + '"]');
+            if (field) {
+                field.addEventListener('input', function () {
+                    var group = field.closest('.form-group');
+                    if (!group) return;
+                    var currentVal = field.value.trim();
+                    group.querySelectorAll('.quick-chip').forEach(function (c) {
+                        var chipVal = c.getAttribute('data-value') || c.textContent.trim();
+                        if (chipVal === currentVal) {
+                            c.classList.add('active');
+                        } else {
+                            c.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+
         var originInput = form.querySelector('input[name="pagina_origem"]');
         if (originInput && !originInput.value) {
             originInput.value = document.title + ' (' + (window.location.pathname || '/') + ')';
@@ -83,14 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 pagina_origem: formData.get('pagina_origem') || (document.title + ' (' + window.location.pathname + ')')
             };
 
-            // Converte selects para o rótulo legível na planilha e no e-mail
-            ['momento_financeiro', 'principal_desafio'].forEach(function (fieldName) {
-                var selectEl = form.querySelector('[name="' + fieldName + '"]');
-                if (selectEl && selectEl.tagName === 'SELECT' && selectEl.selectedIndex >= 0) {
-                    payload[fieldName] = selectEl.options[selectEl.selectedIndex].text;
-                }
-            });
-
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 redirect: 'follow',
@@ -108,6 +140,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         throw new Error(result.message || 'Erro no Google Apps Script');
                     }
                     form.reset();
+                    form.querySelectorAll('.quick-chip.active').forEach(function (c) {
+                        c.classList.remove('active');
+                    });
                     setStatus('Recebemos seus dados! Nossa equipe entrará em contato em breve.', 'success');
                     if (typeof fbq === 'function') fbq('track', 'Lead');
                 })

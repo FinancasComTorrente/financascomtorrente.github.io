@@ -30,7 +30,7 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css?v=2.4">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.5">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
 
@@ -432,28 +432,30 @@
                         </div>
                         <div class="form-group">
                             <label for="momento-home">Estação / Momento Financeiro Atual *</label>
-                            <select id="momento-home" name="momento_financeiro" required>
-                                <option value="" disabled selected>Em qual momento você está hoje?</option>
-                                <option value="organizacao">Organizando as finanças / Saindo das dívidas</option>
-                                <option value="reserva_inicio">Construindo reserva e começando a investir</option>
-                                <option value="multiplicacao_pf">Já invisto e busco rentabilizar / proteger patrimônio (PF)</option>
-                                <option value="wealth_sucessao">Patrimônio consolidado / Gestão Wealth e Sucessão</option>
-                                <option value="empresarial_pj">Sou empresário(a) e busco gestão financeira para empresa (PJ)</option>
-                                <option value="imprensa_parcerias">Imprensa, Palestras ou Parcerias Comerciais</option>
-                            </select>
+                            <input type="text" id="momento-home" name="momento_financeiro" required
+                                placeholder="Digite seu momento atual ou toque em uma opção abaixo...">
+                            <span class="quick-chips-hint">Sugestões rápidas (toque para preencher):</span>
+                            <div class="quick-chips">
+                                <button type="button" class="quick-chip" data-value="Organizando as finanças / Saindo das dívidas">Saindo das dívidas</button>
+                                <button type="button" class="quick-chip" data-value="Construindo reserva e começando a investir">Começando a investir</button>
+                                <button type="button" class="quick-chip" data-value="Já invisto e busco rentabilizar / proteger patrimônio (PF)">Rentabilizar patrimônio (PF)</button>
+                                <button type="button" class="quick-chip" data-value="Patrimônio consolidado / Gestão Wealth e Sucessão">Gestão Wealth / Sucessão</button>
+                                <button type="button" class="quick-chip" data-value="Sou empresário(a) e busco gestão financeira para empresa (PJ)">Sou Empresário(a) (PJ)</button>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="desafio-home">Qual é o seu Principal Desafio hoje? *</label>
-                            <select id="desafio-home" name="principal_desafio" required>
-                                <option value="" disabled selected>Selecione seu principal desafio</option>
-                                <option value="controle_organizacao">Falta de organização, controle ou planejamento financeiro</option>
-                                <option value="dividas">Quitar dívidas e recuperar a tranquilidade financeira</option>
-                                <option value="comecar_investir">Insegurança para investir melhor e fazer o dinheiro render</option>
-                                <option value="baixa_rentabilidade">Carteira rendendo pouco, taxas altas ou falta de diversificação</option>
-                                <option value="caixa_pj">Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa</option>
-                                <option value="aposentadoria_sucessao">Planejar liberdade financeira, renda passiva ou sucessão</option>
-                                <option value="outros">Outro objetivo / Convite corporativo</option>
-                            </select>
+                            <input type="text" id="desafio-home" name="principal_desafio" required
+                                placeholder="Descreva seu principal desafio ou selecione abaixo...">
+                            <span class="quick-chips-hint">Sugestões rápidas (toque para preencher):</span>
+                            <div class="quick-chips">
+                                <button type="button" class="quick-chip" data-value="Falta de organização, controle ou planejamento financeiro">Organização e controle</button>
+                                <button type="button" class="quick-chip" data-value="Quitar dívidas e recuperar a tranquilidade financeira">Quitar dívidas</button>
+                                <button type="button" class="quick-chip" data-value="Insegurança para investir melhor e fazer o dinheiro render">Investir com segurança</button>
+                                <button type="button" class="quick-chip" data-value="Carteira rendendo pouco, taxas altas ou falta de diversificação">Melhorar rentabilidade</button>
+                                <button type="button" class="quick-chip" data-value="Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa">Caixa e lucro na empresa (PJ)</button>
+                                <button type="button" class="quick-chip" data-value="Planejar liberdade financeira, renda passiva ou sucessão">Liberdade financeira / Renda passiva</button>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="mensagem-home">Detalhes Adicionais (Opcional)</label>
@@ -466,7 +468,7 @@
                                 <span>Concordo com o tratamento dos meus dados pessoais para contato comercial via telefone, WhatsApp e e-mail, nos termos da <strong>LGPD (Lei nº 13.709/2018)</strong>. *</span>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Enviar Informações <i class="ph-bold ph-paper-plane-right"></i></button>
+                        <button type="submit" class="btn btn-primary w-100">Receber Diagnóstico Financeiro Gratuito <i class="ph-bold ph-paper-plane-right"></i></button>
                         <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
@@ -526,7 +528,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js?v=2.1"></script>
-    <script src="assets/js/contato-form.js?v=1.5"></script>
+    <script src="assets/js/contato-form.js?v=1.6"></script>
 
     <!-- Instagram Carousel Script -->
     <script>
