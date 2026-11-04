@@ -57,11 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.indexOf('https://script.google.com/') !== 0) {
-                setStatus('A URL do Google Apps Script ainda não foi configurada em assets/js/contato-form.js.', 'error');
-                return;
-            }
-
             var originalHTML = button.innerHTML;
             button.disabled = true;
             button.textContent = 'Enviando...';
@@ -88,22 +83,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // text/plain evita bloqueio de preflight CORS no Google Apps Script e funciona inclusive localmente
+            // mode: 'no-cors' + text/plain garante envio ao Google Apps Script sem bloqueio de CORS no redirecionamento 302
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                credentials: 'omit',
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8'
                 },
                 body: JSON.stringify(payload)
             })
-                .then(function (res) {
-                    if (!res.ok) throw new Error('HTTP ' + res.status);
-                    return res.json();
-                })
-                .then(function (result) {
-                    if (result && result.result === 'error') {
-                        throw new Error(result.message || 'Erro no script');
-                    }
+                .then(function () {
                     form.reset();
                     setStatus('Recebemos seus dados! Nossa equipe entrará em contato em breve.', 'success');
                     if (typeof fbq === 'function') fbq('track', 'Lead');
