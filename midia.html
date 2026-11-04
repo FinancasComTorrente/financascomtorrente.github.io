@@ -482,21 +482,96 @@
             </div>
         </section>
 
-        <!-- Assessoria de Imprensa & Convites CTA -->
-        <section class="cta section">
+        <!-- Assessoria de Imprensa, Convites & Contato -->
+        <section id="contato-rapido" class="contato section" style="position: relative; overflow: hidden;">
             <div class="cta-glow"></div>
-            <div class="container">
-                <div class="cta-content text-center">
-                    <span class="badge">Assessoria & Palestras</span>
-                    <h2 class="section-title reveal">Convites para Imprensa, TV, Rádio e Eventos</h2>
-                    <p class="section-desc mx-auto reveal">Jornalistas, produtores e organizadores de eventos podem entrar em contato direto para pautas econômicas, entrevistas ao vivo, artigos ou palestras corporativas.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <div class="container contato-container">
+                <div class="contato-info reveal">
+                    <span class="badge">Assessoria, Palestras & Consultoria</span>
+                    <h2 class="section-title reveal">Convites, Imprensa ou <span class="text-gradient">Diagnóstico</span></h2>
+                    <p class="section-desc reveal">Jornalistas, organizadores de eventos, empresários e investidores podem entrar em contato direto preenchendo o formulário ao lado ou falando com a assessoria via WhatsApp.</p>
+
+                    <ul class="contato-lista">
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                            <div>
+                                <h4>E-mail Geral & Imprensa</h4>
+                                <p>financascomtorrente@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-microphone-stage"></i></div>
+                            <div>
+                                <h4>Pautas, Palestras & Consultorias</h4>
+                                <p>Atendimento em todo o Brasil</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-2">
                         <a href="https://wa.me/5569992162700?text=Ol%C3%A1%20Matheus!%20Entro%20em%20contato%20sobre%20uma%20pauta%20de%20imprensa%20/%20convite."
-                            target="_blank" class="btn btn-primary btn-large">
-                            <i class="ph-fill ph-whatsapp-logo" style="font-size: 1.3rem; margin-right: 0.5rem;"></i> Falar com Assessoria
+                            target="_blank" class="btn btn-secondary btn-large w-100 text-center">
+                            <i class="ph-fill ph-whatsapp-logo" style="font-size: 1.3rem; margin-right: 0.5rem;"></i> Falar com Assessoria no WhatsApp
                         </a>
-                        <a href="contato.html" class="btn btn-secondary btn-large">Outros Canais de Contato</a>
                     </div>
+                </div>
+
+                <div class="contato-form-wrapper reveal">
+                    <h3>Solicitar Diagnóstico & Contato</h3>
+                    <p class="form-subtitle">Leva menos de 1 minuto. Receba um atendimento direcionado para a sua necessidade.</p>
+                    <form class="contato-form" action="https://formsubmit.co/financascomtorrente@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Novo Lead (SDR) pelo site - Finanças com Torrente">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="pagina_origem" value="Na Mídia (midia.html)">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <label for="nome-midia">Seu Nome *</label>
+                            <input type="text" id="nome-midia" name="nome" required placeholder="Ex: João da Silva">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone-midia">Telefone / WhatsApp (com DDD) *</label>
+                                <input type="tel" id="telefone-midia" name="telefone" required placeholder="(00) 90000-0000" maxlength="15" inputmode="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-midia">Seu E-mail *</label>
+                                <input type="email" id="email-midia" name="email" required placeholder="Seu melhor e-mail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="momento-midia">Estação / Momento Financeiro Atual *</label>
+                            <select id="momento-midia" name="momento_financeiro" required>
+                                <option value="" disabled selected>Em qual momento você está hoje?</option>
+                                <option value="organizacao">Organizando as finanças / Saindo das dívidas</option>
+                                <option value="reserva_inicio">Construindo reserva e começando a investir</option>
+                                <option value="multiplicacao_pf">Já invisto e busco rentabilizar / proteger patrimônio (PF)</option>
+                                <option value="wealth_sucessao">Patrimônio consolidado / Gestão Wealth e Sucessão</option>
+                                <option value="empresarial_pj">Sou empresário(a) e busco gestão financeira para empresa (PJ)</option>
+                                <option value="imprensa_parcerias">Imprensa, Palestras ou Parcerias Comerciais</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desafio-midia">Qual é o seu Principal Desafio hoje? *</label>
+                            <select id="desafio-midia" name="principal_desafio" required>
+                                <option value="" disabled selected>Selecione seu principal desafio</option>
+                                <option value="controle_organizacao">Falta de organização, controle ou planejamento financeiro</option>
+                                <option value="dividas">Quitar dívidas e recuperar a tranquilidade financeira</option>
+                                <option value="comecar_investir">Insegurança para investir melhor e fazer o dinheiro render</option>
+                                <option value="baixa_rentabilidade">Carteira rendendo pouco, taxas altas ou falta de diversificação</option>
+                                <option value="caixa_pj">Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa</option>
+                                <option value="aposentadoria_sucessao">Planejar liberdade financeira, renda passiva ou sucessão</option>
+                                <option value="outros">Outro objetivo / Convite corporativo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem-midia">Detalhes Adicionais (Opcional)</label>
+                            <textarea id="mensagem-midia" name="mensagem" rows="3"
+                                placeholder="Se desejar, conte um pouco mais sobre seu cenário, pauta ou dúvida..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Informações <i class="ph-bold ph-paper-plane-right"></i></button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </form>
                 </div>
             </div>
         </section>
@@ -550,6 +625,7 @@
     </footer>
 
     <script src="assets/js/script.js?v=2.1"></script>
+    <script src="assets/js/contato-form.js?v=1.0"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const filterBtns = document.querySelectorAll('.media-filter-btn');

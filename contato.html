@@ -27,7 +27,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.3">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
     <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -152,33 +152,63 @@
                 </div>
 
                 <div class="contato-form-wrapper reveal">
-                    <h3>Envie uma Mensagem</h3>
-                    <form class="contato-form">
+                    <h3>Solicitar Diagnóstico & Contato</h3>
+                    <p class="form-subtitle">Preencha os dados abaixo para que nossa equipe entenda seu momento e entre em contato.</p>
+                    <form class="contato-form" id="contatoForm"
+                        action="https://formsubmit.co/financascomtorrente@gmail.com" method="POST">
+                        <!-- Configuração FormSubmit -->
+                        <input type="hidden" name="_subject" value="Novo Lead (SDR) pelo site - Finanças com Torrente">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="pagina_origem" value="Contato (contato.html)">
+                        <!-- Honeypot anti-spam (não preencher) -->
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="nome">Seu Nome *</label>
                             <input type="text" id="nome" name="nome" required placeholder="Ex: João da Silva">
                         </div>
-                        <div class="form-group">
-                            <label for="email">Seu E-mail *</label>
-                            <input type="email" id="email" name="email" required placeholder="Seu melhor e-mail">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone / WhatsApp (com DDD) *</label>
+                                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 90000-0000" maxlength="15" inputmode="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Seu E-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="Seu melhor e-mail">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="assunto">Interesse Principal *</label>
-                            <select id="assunto" name="assunto" required>
-                                <option value="" disabled selected>Selecione uma opção</option>
-                                <option value="consultoria">Consultoria de Investimentos</option>
-                                <option value="wealth">Gestão de Patrimônio (Wealth)</option>
-                                <option value="cursos">Cursos e Mentorias</option>
-                                <option value="parcerias">Parcerias Comerciais/Imprensa</option>
-                                <option value="outros">Outros</option>
+                            <label for="momento_financeiro">Estação / Momento Financeiro Atual *</label>
+                            <select id="momento_financeiro" name="momento_financeiro" required>
+                                <option value="" disabled selected>Em qual momento você está hoje?</option>
+                                <option value="organizacao">Organizando as finanças / Saindo das dívidas</option>
+                                <option value="reserva_inicio">Construindo reserva e começando a investir</option>
+                                <option value="multiplicacao_pf">Já invisto e busco rentabilizar / proteger patrimônio (PF)</option>
+                                <option value="wealth_sucessao">Patrimônio consolidado / Gestão Wealth e Sucessão</option>
+                                <option value="empresarial_pj">Sou empresário(a) e busco gestão financeira para empresa (PJ)</option>
+                                <option value="imprensa_parcerias">Imprensa, Palestras ou Parcerias Comerciais</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="mensagem">Mensagem / Observações</label>
-                            <textarea id="mensagem" name="mensagem" rows="5"
-                                placeholder="Como posso ajudar?"></textarea>
+                            <label for="principal_desafio">Qual é o seu Principal Desafio hoje? *</label>
+                            <select id="principal_desafio" name="principal_desafio" required>
+                                <option value="" disabled selected>Selecione seu principal desafio</option>
+                                <option value="controle_organizacao">Falta de organização, controle ou planejamento financeiro</option>
+                                <option value="dividas">Quitar dívidas e recuperar a tranquilidade financeira</option>
+                                <option value="comecar_investir">Insegurança para investir melhor e fazer o dinheiro render</option>
+                                <option value="baixa_rentabilidade">Carteira rendendo pouco, taxas altas ou falta de diversificação</option>
+                                <option value="caixa_pj">Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa</option>
+                                <option value="aposentadoria_sucessao">Planejar liberdade financeira, renda passiva ou sucessão</option>
+                                <option value="outros">Outro objetivo / Convite corporativo</option>
+                            </select>
                         </div>
-                        <button type="button" class="btn btn-primary w-100">Enviar Formulário</button>
+                        <div class="form-group">
+                            <label for="mensagem">Detalhes Adicionais (Opcional)</label>
+                            <textarea id="mensagem" name="mensagem" rows="3"
+                                placeholder="Se desejar, conte um pouco mais sobre seu cenário ou dúvida..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Informações <i class="ph-bold ph-paper-plane-right"></i></button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                     </form>
                 </div>
 
@@ -236,6 +266,7 @@
     </footer>
 
     <script src="assets/js/script.js?v=2.1"></script>
+    <script src="assets/js/contato-form.js?v=1.0"></script>
 </body>
 
 </html>

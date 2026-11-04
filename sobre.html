@@ -27,7 +27,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css?v=2.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=2.3">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
     <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -278,6 +278,99 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact & Qualification Section -->
+        <section id="contato-rapido" class="contato section" style="position: relative; overflow: hidden;">
+            <div class="cta-glow"></div>
+            <div class="container contato-container">
+                <div class="contato-info reveal">
+                    <span class="badge">Diagnóstico Estratégico</span>
+                    <h2 class="section-title reveal">Vamos construir o seu <span class="text-gradient">próximo passo?</span></h2>
+                    <p class="section-desc reveal">Preencha o formulário ao lado com o seu momento atual e principal desafio. Nossa equipe analisará seu cenário e entrará em contato para agendar sua sessão estratégica.</p>
+
+                    <ul class="contato-lista">
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                            <div>
+                                <h4>E-mail Geral</h4>
+                                <p>financascomtorrente@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-map-pin"></i></div>
+                            <div>
+                                <h4>Atendimento Nacional & Internacional</h4>
+                                <p>Online e Presencial (Brasil)</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-2">
+                        <a href="https://wa.me/5569992162700?text=Eu%20vim%20do%20seu%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AA"
+                            target="_blank" class="btn btn-secondary btn-large w-100 text-center">Prefere WhatsApp Direto? Fale Agora
+                            <i class="ph-bold ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="contato-form-wrapper reveal">
+                    <h3>Solicitar Diagnóstico & Contato</h3>
+                    <p class="form-subtitle">Leva menos de 1 minuto. Receba um atendimento direcionado para a sua necessidade.</p>
+                    <form class="contato-form" action="https://formsubmit.co/financascomtorrente@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Novo Lead (SDR) pelo site - Finanças com Torrente">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="pagina_origem" value="Sobre (sobre.html)">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <label for="nome-sobre">Seu Nome *</label>
+                            <input type="text" id="nome-sobre" name="nome" required placeholder="Ex: João da Silva">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone-sobre">Telefone / WhatsApp (com DDD) *</label>
+                                <input type="tel" id="telefone-sobre" name="telefone" required placeholder="(00) 90000-0000" maxlength="15" inputmode="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-sobre">Seu E-mail *</label>
+                                <input type="email" id="email-sobre" name="email" required placeholder="Seu melhor e-mail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="momento-sobre">Estação / Momento Financeiro Atual *</label>
+                            <select id="momento-sobre" name="momento_financeiro" required>
+                                <option value="" disabled selected>Em qual momento você está hoje?</option>
+                                <option value="organizacao">Organizando as finanças / Saindo das dívidas</option>
+                                <option value="reserva_inicio">Construindo reserva e começando a investir</option>
+                                <option value="multiplicacao_pf">Já invisto e busco rentabilizar / proteger patrimônio (PF)</option>
+                                <option value="wealth_sucessao">Patrimônio consolidado / Gestão Wealth e Sucessão</option>
+                                <option value="empresarial_pj">Sou empresário(a) e busco gestão financeira para empresa (PJ)</option>
+                                <option value="imprensa_parcerias">Imprensa, Palestras ou Parcerias Comerciais</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desafio-sobre">Qual é o seu Principal Desafio hoje? *</label>
+                            <select id="desafio-sobre" name="principal_desafio" required>
+                                <option value="" disabled selected>Selecione seu principal desafio</option>
+                                <option value="controle_organizacao">Falta de organização, controle ou planejamento financeiro</option>
+                                <option value="dividas">Quitar dívidas e recuperar a tranquilidade financeira</option>
+                                <option value="comecar_investir">Insegurança para investir melhor e fazer o dinheiro render</option>
+                                <option value="baixa_rentabilidade">Carteira rendendo pouco, taxas altas ou falta de diversificação</option>
+                                <option value="caixa_pj">Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa</option>
+                                <option value="aposentadoria_sucessao">Planejar liberdade financeira, renda passiva ou sucessão</option>
+                                <option value="outros">Outro objetivo / Convite corporativo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem-sobre">Detalhes Adicionais (Opcional)</label>
+                            <textarea id="mensagem-sobre" name="mensagem" rows="3"
+                                placeholder="Se desejar, conte um pouco mais sobre seu cenário ou dúvida..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enviar Informações <i class="ph-bold ph-paper-plane-right"></i></button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -329,6 +422,7 @@
     </footer>
 
     <script src="assets/js/script.js?v=2.1"></script>
+    <script src="assets/js/contato-form.js?v=1.0"></script>
 </body>
 
 </html>

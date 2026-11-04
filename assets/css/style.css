@@ -2371,3 +2371,48 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Mensagens de status e layout do formulário de qualificação (SDR) */
+.contato-form-wrapper .form-subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-top: -1.25rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contato-form-wrapper {
+        padding: 1.75rem;
+    }
+}
+
+.form-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.success {
+    color: #4ade80;
+}
+
+.form-status.error {
+    color: #f87171;
+}
