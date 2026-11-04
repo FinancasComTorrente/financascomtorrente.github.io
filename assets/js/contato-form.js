@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!forms.length) return;
 
     // URL do Web App gerado no Google Apps Script
-    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjzIn8nywdAHIfXcxzHjnO6MS1UgZeOCOT6HtvUnnuF-aOL6zvVhDI0btmfwclGCtO/exec';
+    var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwNiX6ousamYRgwmVwRsdk5ZUeS8Oy3h6mA1miKVII7rsHRd1wCkLAWGGvK6-dB8Ayq/exec';
 
     // Máscara automática para Telefone / WhatsApp brasileiro: (DD) 9XXXX-XXXX
     function formatPhone(value) {
@@ -83,23 +83,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // mode: 'no-cors' + text/plain garante envio ao Google Apps Script sem bloqueio de CORS no redirecionamento 302
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                mode: 'no-cors',
-                cache: 'no-cache',
-                credentials: 'omit',
+                redirect: 'follow',
                 headers: {
                     'Content-Type': 'text/plain;charset=utf-8'
                 },
                 body: JSON.stringify(payload)
             })
-                .then(function () {
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    return res.json();
+                })
+                .then(function (result) {
+                    if (result && result.result === 'error') {
+                        throw new Error(result.message || 'Erro no Google Apps Script');
+                    }
                     form.reset();
                     setStatus('Recebemos seus dados! Nossa equipe entrará em contato em breve.', 'success');
                     if (typeof fbq === 'function') fbq('track', 'Lead');
                 })
-                .catch(function () {
+                .catch(function (err) {
+                    console.error('Erro ao enviar formulário:', err);
                     setStatus('Não foi possível enviar agora. Tente novamente ou fale conosco pelo WhatsApp.', 'error');
                 })
                 .finally(function () {
