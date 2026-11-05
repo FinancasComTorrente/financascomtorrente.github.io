@@ -655,6 +655,102 @@ main,
     line-height: 1.4;
 }
 
+/* ── AUTO-ADVANCING APP SCREENSHOTS CAROUSEL ── */
+.lp-carousel-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.lp-screens-carousel {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.25rem 0.15rem 0.75rem;
+}
+
+.lp-screens-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.lp-screens-carousel .lp-screen-card {
+    flex: 0 0 calc((100% - 2.5rem) / 3);
+    scroll-snap-align: start;
+}
+
+.lp-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.lp-carousel-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(208, 167, 71, 0.35);
+    background: rgba(12, 28, 52, 0.9);
+    color: var(--color-accent-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 1.1rem;
+}
+
+.lp-carousel-btn:hover {
+    background: var(--color-accent);
+    color: #050E1A;
+    border-color: var(--color-accent);
+    transform: scale(1.06);
+}
+
+.lp-carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.lp-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lp-carousel-dot.active {
+    width: 24px;
+    background: var(--color-accent);
+}
+
+@media (max-width: 992px) {
+    .lp-screens-carousel .lp-screen-card {
+        flex: 0 0 calc((100% - 1.25rem) / 2);
+    }
+}
+
+@media (max-width: 640px) {
+    .lp-screens-carousel {
+        max-width: 330px;
+        margin: 0 auto;
+    }
+
+    .lp-screens-carousel .lp-screen-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+}
+
 /* ── TESTIMONIALS (VIDEO SHORTS + TEXT CARDS) ── */
 .lp-video-grid {
     display: grid;

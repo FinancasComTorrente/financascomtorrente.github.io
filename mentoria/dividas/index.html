@@ -17,8 +17,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css?v=2.4">
-    <link rel="stylesheet" href="../../assets/css/mentoria.css?v=1.4">
+    <link rel="stylesheet" href="../../assets/css/style.css?v=2.5">
+    <link rel="stylesheet" href="../../assets/css/mentoria.css?v=1.5">
     <link rel="icon" type="image/png" href="../../assets/images/logo-icon.png">
     <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -243,39 +243,64 @@
                     </div>
                 </div>
 
-                <!-- Vitrine Visual: App Torrente por dentro -->
+                <!-- Vitrine Visual: App Torrente por dentro (Carrossel Automático) -->
                 <div class="lp-showcase-block">
                     <div class="lp-showcase-header">
                         <h3><i class="ph-fill ph-device-mobile-camera"></i> Veja o App Torrente por dentro</h3>
                         <span>Acesso Incluso na Mentoria ✓</span>
                     </div>
-                    <div class="lp-screens-grid-3">
-                        <div class="lp-screen-card">
-                            <div class="lp-screen-img-wrap">
-                                <img src="../../assets/images/mentoria/app-torrente-dividas.jpg" alt="App Torrente - Controle de Dívidas e Parcelas" loading="lazy" decoding="async">
+                    <div class="lp-carousel-wrap js-app-carousel">
+                        <div class="lp-screens-carousel">
+                            <div class="lp-screen-card">
+                                <div class="lp-screen-img-wrap">
+                                    <img src="../../assets/images/mentoria/app-torrente-dividas.jpg" width="423" height="920" alt="App Torrente - Controle de Dívidas e Parcelas" loading="lazy" decoding="async">
+                                </div>
+                                <div class="lp-screen-caption">
+                                    <strong>1. Raio-X das Suas Contas e Dívidas</strong>
+                                    <small>Veja em segundos o saldo total, comprometimento mensal e prazo médio sem planilhas difíceis.</small>
+                                </div>
                             </div>
-                            <div class="lp-screen-caption">
-                                <strong>1. Raio-X das Suas Contas e Dívidas</strong>
-                                <small>Veja em segundos o saldo total, comprometimento mensal e prazo médio sem planilhas difíceis.</small>
+                            <div class="lp-screen-card">
+                                <div class="lp-screen-img-wrap">
+                                    <img src="../../assets/images/mentoria/app-torrente-evolucao.jpg" width="423" height="920" alt="App Torrente - Gráfico de Queda das Dívidas" loading="lazy" decoding="async">
+                                </div>
+                                <div class="lp-screen-caption">
+                                    <strong>2. Evolução e Queda das Dívidas</strong>
+                                    <small>Acompanhe mês a mês o gráfico das suas dívidas caindo até zerar.</small>
+                                </div>
+                            </div>
+                            <div class="lp-screen-card">
+                                <div class="lp-screen-img-wrap">
+                                    <img src="../../assets/images/mentoria/app-torrente-contrato.jpg" width="423" height="920" alt="App Torrente - Detalhe de Juros e Parcelas" loading="lazy" decoding="async">
+                                </div>
+                                <div class="lp-screen-caption">
+                                    <strong>3. Raio-X de Juros por Contrato</strong>
+                                    <small>Saiba exatamente qual taxa de juros você paga em cada contrato e quanto já quitou.</small>
+                                </div>
+                            </div>
+                            <div class="lp-screen-card">
+                                <div class="lp-screen-img-wrap">
+                                    <img src="../../assets/images/mentoria/app-torrente-patrimonio.jpg" width="423" height="920" alt="App Torrente - Evolução do Patrimônio e Ativos" loading="lazy" decoding="async">
+                                </div>
+                                <div class="lp-screen-caption">
+                                    <strong>4. Evolução do Patrimônio e Ativos</strong>
+                                    <small>Depois de sair das dívidas, acompanhe o crescimento dos seus investimentos e bens no gráfico.</small>
+                                </div>
+                            </div>
+                            <div class="lp-screen-card">
+                                <div class="lp-screen-img-wrap">
+                                    <img src="../../assets/images/mentoria/app-torrente-distribuicao.jpg" width="423" height="920" alt="App Torrente - Distribuição do Patrimônio e Cotação USD/BRL" loading="lazy" decoding="async">
+                                </div>
+                                <div class="lp-screen-caption">
+                                    <strong>5. Distribuição por Categoria e Dólar</strong>
+                                    <small>Visualize seu valor total investido, cotação USD/BRL e como seu patrimônio está dividido.</small>
+                                </div>
                             </div>
                         </div>
-                        <div class="lp-screen-card">
-                            <div class="lp-screen-img-wrap">
-                                <img src="../../assets/images/mentoria/app-torrente-evolucao.jpg" alt="App Torrente - Gráfico de Queda das Dívidas" loading="lazy" decoding="async">
-                            </div>
-                            <div class="lp-screen-caption">
-                                <strong>2. Evolução e Queda das Dívidas</strong>
-                                <small>Acompanhe mês a mês o gráfico das suas dívidas caindo até zerar.</small>
-                            </div>
-                        </div>
-                        <div class="lp-screen-card">
-                            <div class="lp-screen-img-wrap">
-                                <img src="../../assets/images/mentoria/app-torrente-contrato.jpg" alt="App Torrente - Detalhe de Juros e Parcelas" loading="lazy" decoding="async">
-                            </div>
-                            <div class="lp-screen-caption">
-                                <strong>3. Raio-X de Juros por Contrato</strong>
-                                <small>Saiba exatamente qual taxa de juros você paga em cada contrato e quanto já quitou.</small>
-                            </div>
+                        <div class="lp-carousel-controls">
+                            <button type="button" class="lp-carousel-btn js-carousel-prev" aria-label="Tela anterior"><i class="ph-bold ph-caret-left"></i></button>
+                            <div class="lp-carousel-dots js-carousel-dots"></div>
+                            <button type="button" class="lp-carousel-btn js-carousel-next" aria-label="Próxima tela"><i class="ph-bold ph-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -673,6 +698,106 @@
                 if (!id) return;
                 frame.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="Depoimento Mentoria Finanças com Torrente" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
             });
+        });
+        document.querySelectorAll('.js-app-carousel').forEach(function (wrap) {
+            var track = wrap.querySelector('.lp-screens-carousel');
+            var cards = wrap.querySelectorAll('.lp-screen-card');
+            var dotsWrap = wrap.querySelector('.js-carousel-dots');
+            var prevBtn = wrap.querySelector('.js-carousel-prev');
+            var nextBtn = wrap.querySelector('.js-carousel-next');
+            if (!track || !cards.length) return;
+
+            var current = 0;
+            var timer = null;
+
+            cards.forEach(function (_, idx) {
+                var dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'lp-carousel-dot' + (idx === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Ir para tela ' + (idx + 1));
+                dot.addEventListener('click', function () {
+                    goTo(idx);
+                    restartTimer();
+                });
+                dotsWrap.appendChild(dot);
+            });
+
+            var dots = dotsWrap.querySelectorAll('.lp-carousel-dot');
+
+            function updateDots(idx) {
+                dots.forEach(function (d, i) {
+                    d.classList.toggle('active', i === idx);
+                });
+            }
+
+            function goTo(idx) {
+                current = (idx + cards.length) % cards.length;
+                var card = cards[current];
+                if (card) {
+                    var maxScroll = track.scrollWidth - track.clientWidth;
+                    var targetLeft = Math.min(card.offsetLeft - track.offsetLeft, maxScroll);
+                    track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+                }
+                updateDots(current);
+            }
+
+            function nextSlide() {
+                var maxScroll = track.scrollWidth - track.clientWidth;
+                if (track.scrollLeft >= maxScroll - 10) {
+                    goTo(0);
+                } else {
+                    goTo(current + 1);
+                }
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    goTo(current - 1);
+                    restartTimer();
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    nextSlide();
+                    restartTimer();
+                });
+            }
+
+            track.addEventListener('scroll', function () {
+                var scrollLeft = track.scrollLeft;
+                var closest = 0;
+                var minDiff = Infinity;
+                cards.forEach(function (card, idx) {
+                    var diff = Math.abs((card.offsetLeft - track.offsetLeft) - scrollLeft);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closest = idx;
+                    }
+                });
+                current = closest;
+                updateDots(current);
+            }, { passive: true });
+
+            function startTimer() {
+                if (timer) clearInterval(timer);
+                timer = setInterval(nextSlide, 3500);
+            }
+
+            function stopTimer() {
+                if (timer) clearInterval(timer);
+            }
+
+            function restartTimer() {
+                stopTimer();
+                startTimer();
+            }
+
+            wrap.addEventListener('mouseenter', stopTimer);
+            wrap.addEventListener('mouseleave', startTimer);
+            wrap.addEventListener('touchstart', stopTimer, { passive: true });
+            wrap.addEventListener('touchend', startTimer, { passive: true });
+
+            startTimer();
         });
     </script>
 </body>
