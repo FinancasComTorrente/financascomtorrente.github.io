@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css?v=2.4">
+    <link rel="stylesheet" href="../assets/css/style.css?v=2.5">
     <link rel="stylesheet" href="../assets/css/mentoria.css?v=1.4">
     <link rel="icon" type="image/png" href="../assets/images/logo-icon.png">
     <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -130,7 +130,117 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact & Qualification Section -->
+        <section id="contato-rapido" class="contato section" style="position: relative; overflow: hidden; padding-top: 1rem;">
+            <div class="cta-glow"></div>
+            <div class="container contato-container">
+                <div class="contato-info">
+                    <span class="badge">Diagnóstico Estratégico</span>
+                    <h2 class="section-title">Em dúvida sobre qual caminho escolher? <span class="text-gradient">Fale conosco.</span></h2>
+                    <p class="section-desc">Preencha o formulário ao lado com o seu momento atual e principal desafio. Nossa equipe de especialistas analisará seu perfil e entrará em contato para direcionar você ao melhor plano.</p>
+
+                    <ul class="contato-lista">
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                            <div>
+                                <h4>E-mail Geral</h4>
+                                <p>financascomtorrente@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-icon"><i class="ph-fill ph-map-pin"></i></div>
+                            <div>
+                                <h4>Atendimento Nacional & Internacional</h4>
+                                <p>Online e Presencial (Brasil)</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-2">
+                        <a href="https://wa.me/5569992162700?text=Ol%C3%A1%20Matheus!%20Vim%20pela%20p%C3%A1gina%20da%20Mentoria%20e%20gostaria%20de%20ajuda%20para%20escolher%20o%20melhor%20plano."
+                            target="_blank" class="btn btn-secondary btn-large w-100 text-center">Prefere WhatsApp Direto? Fale Agora
+                            <i class="ph-bold ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="contato-form-wrapper">
+                    <h3>Solicitar Diagnóstico & Contato</h3>
+                    <p class="form-subtitle">Leva menos de 1 minuto. Receba um atendimento direcionado para a sua necessidade.</p>
+                    <form class="contato-form" action="https://script.google.com/macros/s/AKfycbwNiX6ousamYRgwmVwRsdk5ZUeS8Oy3h6mA1miKVII7rsHRd1wCkLAWGGvK6-dB8Ayq/exec" method="POST">
+                        <input type="hidden" name="_subject" value="Novo Lead (SDR) pelo site - Finanças com Torrente">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="pagina_origem" value="Mentoria Triagem (mentoria/index.html)">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                        <div class="form-group">
+                            <label for="nome-mentoria">Seu Nome *</label>
+                            <input type="text" id="nome-mentoria" name="nome" required placeholder="Ex: João da Silva">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone-mentoria">Telefone / WhatsApp (com DDD) *</label>
+                                <input type="tel" id="telefone-mentoria" name="telefone" required placeholder="(00) 90000-0000" maxlength="15" inputmode="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-mentoria">Seu E-mail *</label>
+                                <input type="email" id="email-mentoria" name="email" required placeholder="Seu melhor e-mail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="momento-mentoria">Estação / Momento Financeiro Atual *</label>
+                            <input type="text" id="momento-mentoria" name="momento_financeiro" required
+                                placeholder="Digite seu momento atual ou toque em uma opção abaixo...">
+                            <span class="quick-chips-hint">Sugestões rápidas (toque para preencher):</span>
+                            <div class="quick-chips">
+                                <button type="button" class="quick-chip" data-value="Organizando as finanças / Saindo das dívidas">Saindo das dívidas</button>
+                                <button type="button" class="quick-chip" data-value="Construindo reserva e começando a investir">Começando a investir</button>
+                                <button type="button" class="quick-chip" data-value="Já invisto e busco rentabilizar / proteger patrimônio (PF)">Rentabilizar patrimônio (PF)</button>
+                                <button type="button" class="quick-chip" data-value="Patrimônio consolidado / Gestão Wealth e Sucessão">Gestão Wealth / Sucessão</button>
+                                <button type="button" class="quick-chip" data-value="Sou empresário(a) e busco gestão financeira para empresa (PJ)">Sou Empresário(a) (PJ)</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="desafio-mentoria">Qual é o seu Principal Desafio hoje? *</label>
+                            <input type="text" id="desafio-mentoria" name="principal_desafio" required
+                                placeholder="Descreva seu principal desafio ou selecione abaixo...">
+                            <span class="quick-chips-hint">Sugestões rápidas (toque para preencher):</span>
+                            <div class="quick-chips">
+                                <button type="button" class="quick-chip" data-value="Falta de organização, controle ou planejamento financeiro">Organização e controle</button>
+                                <button type="button" class="quick-chip" data-value="Quitar dívidas e recuperar a tranquilidade financeira">Quitar dívidas</button>
+                                <button type="button" class="quick-chip" data-value="Insegurança para investir melhor e fazer o dinheiro render">Investir com segurança</button>
+                                <button type="button" class="quick-chip" data-value="Carteira rendendo pouco, taxas altas ou falta de diversificação">Melhorar rentabilidade</button>
+                                <button type="button" class="quick-chip" data-value="Mistura de contas PF/PJ, fluxo de caixa ou precificação na empresa">Caixa e lucro na empresa (PJ)</button>
+                                <button type="button" class="quick-chip" data-value="Planejar liberdade financeira, renda passiva ou sucessão">Liberdade financeira / Renda passiva</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem-mentoria">Detalhes Adicionais (Opcional)</label>
+                            <textarea id="mensagem-mentoria" name="mensagem" rows="3"
+                                placeholder="Se desejar, conte um pouco mais sobre seu cenário ou dúvida..."></textarea>
+                        </div>
+                        <div class="form-lgpd">
+                            <label class="lgpd-label">
+                                <input type="checkbox" name="aceite_lgpd" value="Sim (Aceito LGPD)" required>
+                                <span>Concordo com o tratamento dos meus dados pessoais para contato comercial via telefone, WhatsApp e e-mail, nos termos da <strong>LGPD (Lei nº 13.709/2018)</strong>. *</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Receber Diagnóstico Financeiro Gratuito <i class="ph-bold ph-paper-plane-right"></i></button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer" style="padding-top: 3rem;">
+        <div class="footer-bottom container" style="border-top: none;">
+            <p>&copy; 2026 <a href="../index.html">Matheus Torrente</a> – Economista CORECON-RO 782. Todos os direitos reservados.</p>
+            <p>financascomtorrente@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/contato-form.js?v=1.6"></script>
 </body>
 
 </html>
